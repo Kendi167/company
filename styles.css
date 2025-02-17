@@ -1,0 +1,718 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+nav {
+  background-color: #fff; /* Background color of the navbar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px; /* Adjust padding as needed */
+}
+
+.logo {
+  margin-right: 20px;
+}
+
+.logo img {
+  max-height: 50px; /* Adjust logo height as needed */
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333; /* Text color */
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.get-quote-btn {
+  background-color: #ff9800; /* Button background color */
+  color: #fff; /* Button text color */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hero {
+  display: flex; /* Make the hero section a flex container */
+  align-items: center; /* Center content horizontally */
+  text-align: center; /* Center text within items */
+  justify-content: center;
+margin: 10px 10px 15px 50px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.line {
+  width: 100px;
+  height: 3px;
+  background-color: #ff9800; /* Orange line */
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.laptop-image {
+  margin-top: 30px;
+  /* Flex properties for image can be added here if needed */
+}
+
+.laptop-image img {
+  max-width: 40%;
+}
+
+
+.btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #007bff; /* Blue button color */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  margin-right: 20px;
+}
+
+.whatsapp-btn {
+  background-color: #25d366; /* WhatsApp green color */
+}
+.top-services {
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  .top-services h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .top-services p {
+    margin-bottom: 40px;
+  }
+  
+  .service-cards {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card {
+    width: 30%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card h3 {
+    margin-bottom: 10px;
+  }
+  
+  .card img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .hosting-plans {
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  .hosting-plans h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .hosting-plans p {
+    margin-bottom: 40px;
+  }
+  
+  .plan-cards {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .plan-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 30px;
+    text-align: left;
+    width: 30%;
+  }
+  
+  .plan-name {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .plan-features li {
+    margin-bottom: 10px;
+  }
+  
+  .plan-price {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .guarantees {
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  .guarantees h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .guarantee-cards {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .guarantee-cards1 {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .guarantee-card {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 30px;
+    text-align: center;
+    width: 23%;
+  }
+  
+  .guarantee-card i {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .support-section {
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  .support-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .support-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .support-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .support-content li {
+    margin-bottom: 15px;
+  }
+  
+  .support-image img {
+    max-width: 500px;
+  }
+
+  .last {
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  .last h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .last p {
+    margin-bottom: 30px;
+  }
+  
+  .whatsapp-btn {
+    background-color: #25D366; /* WhatsApp green */
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  footer {
+    background-color: #f0f0f0;
+    padding: 30px 0;
+  }
+  
+  .footer-container {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    text-align: left;
+  }
+  
+  .logo img {
+    max-height: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .logo p {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  .social-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .social-icons li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .social-icons a {
+    color: #333;
+  }
+  
+  .footer-links {
+    text-align: left;
+  }
+  
+  .footer-links h3 {
+    margin-bottom: 15px;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 5px;
+  }
+  
+  .footer-links a {
+    color: #666;
+    text-decoration: none;
+  }
+
+  .web-design {
+    text-align: center;
+    padding: 20px 0; 
+  }
+  
+  .web-design hr {
+    border-top: 1px solid #ccc;
+    width: 80px;
+    margin: 0 auto 10px; 
+  }
+  
+  .web-design h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+  
+  .web-design p {
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .packages {
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  .packages h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .packages p {
+    margin-bottom: 40px;
+  }
+  
+  .package-cards {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .package-card {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    width: 30%;
+  }
+  
+  .package-card h3 {
+    margin-bottom: 10px;
+  }
+  
+  .package-card img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+  
+  .package-card .price {
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+
+  .guarantees {
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  .guarantees h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .guarantees p {
+    margin-bottom: 20px;
+  }
+  
+  .guarantee-cards {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to multiple rows */
+    justify-content: space-between;
+  }
+  
+  .guarantee-card {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 30px;
+    text-align: center;
+    width: calc(33.33% - 20px); /* Adjust width for spacing */
+    margin-bottom: 20px;
+  }
+  
+  .guarantee-card i {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333; /* Icon color */
+  }
+
+  .full-branding {
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  .full-branding h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .full-branding p {
+    margin-bottom: 30px;
+  }
+
+  .website-section {
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  .website-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .website-section p {
+    margin-bottom: 40px;
+  }
+
+  .see-more-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue button color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+  .social-media-section {
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  .social-media-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .social-media-section p {
+    margin-bottom: 40px;
+  }
+
+  .need-help {
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .need-help h2 {
+    color: #4b0082; /* Purple color */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .need-help p {
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .whatsapp-btn {
+    background-color: #ff9800; /* Orange color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+  }
+  /* marketting.html */
+
+  .services {
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  .services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333; /* Dark text color */
+  }
+  
+  .services p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 30px;
+  }
+
+  .digital-strategy {
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  .digital-strategy h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333; /* Dark text color */
+  }
+  
+  .digital-strategy p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  .strategy-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 30px;
+  }
+  
+  .strategy-box {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    width: calc(33.33% - 20px); /* Adjust for spacing */
+    margin-bottom: 30px;
+  }
+  
+  .strategy-box h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+  }
+  
+  .strategy-box p {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .step-number {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #333; 
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 15px;
+  }
+
+  .why-choose-us {
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  .why-choose-us h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333; /* Dark text color */
+  }
+  
+  .feature-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .feature-card {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    width: calc(33.33% - 20px); /* Adjust for spacing */
+    margin-bottom: 30px;
+  }
+  
+  .feature-card i {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333; /* Icon color */
+  }
+  
+  .feature-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+  }
+  
+  .feature-card p {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  .pricing {
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  .pricing h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .pricing p {
+    margin-bottom: 30px;
+  }
+  
+  .pricing-table {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .pricing-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 30px;
+    text-align: center;
+    width: 30%;
+  }
+  
+  .pricing-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .pricing-card p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .pricing-card li {
+    margin-bottom: 10px;
+  }
+  
+  .choose-btn {
+    background-color: #4CAF50; /* Green button */
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 20px;
+  }

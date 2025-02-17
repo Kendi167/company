@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MINE</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <a href="index.html" class="flex items-center space-x-2">
+                <img src="Images/mine-logo.jpeg" alt="Mine Logo" class="h-12 w-12 rounded-full">
+                <span class="text-xl font-semibold">Mine Company</span>
+            </a>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="web.html" class="hover:text-blue-500 transition">Web Design</a></li>
+                <li><a href="marketing.html" class="hover:text-blue-500 transition">Digital Marketing</a></li>
+                <li><a href="brand.html" class="hover:text-blue-500 transition">Full Branding</a></li>
+                <li><a href="#" class="hover:text-blue-500 transition">Our Work</a></li>
+            </ul>
+            <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-blue-600 transition">Get Quote</a>
+        </div>
+    </nav>
+
+    <!-- Full Branding Section -->
+    <section class="mt-20 text-center py-10 bg-gray-300">
+        <h2 class="text-3xl font-semibold">Full Branding</h2>
+        <p class="text-gray-600">Brand your business with our complete package.</p>
+    </section>
+
+    <!-- Logo Design -->
+    <section class="text-center py-10">
+        <h3 class="text-2xl font-semibold">Start with a Logo</h3>
+        <p class="text-gray-600">A professional logo is the start of your brand journey.</p>
+        <div class="flex justify-center space-x-6 mt-6">
+            <div class="bg-white shadow-lg p-4 rounded-lg">
+                <img src="Images/logo.jpg" alt="Logo 1" class="w-32 h-32 mx-auto">
+                <p class="mt-2 text-lg">Starting at Ksh 2,000</p>
+            </div>
+            <div class="bg-white shadow-lg p-4 rounded-lg">
+                <img src="Images/logo1.png" alt="Logo 2" class="w-32 h-32 mx-auto">
+                <p class="mt-2 text-lg">Starting at Ksh 2,000</p>
+            </div>
+            <div class="bg-white shadow-lg p-4 rounded-lg">
+                <img src="Images/logo2.jpg" alt="Logo 3" class="w-32 h-32 mx-auto">
+                <p class="mt-2 text-lg">Starting at Ksh 2,000</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Website Section -->
+    <section class="text-center py-10 bg-gray-300">
+        <h2 class="text-2xl font-semibold">Stand Out with a Website</h2>
+        <p class="text-gray-600">Get a professional website for your business.</p>
+        <div class="flex justify-center space-x-8 mt-8">
+            <div class="bg-white shadow-xl p-6 rounded-lg hover:scale-105 transition-transform duration-300">
+                <h3 class="text-xl font-semibold">Personal Website</h3>
+                <a href="web.html">
+                    <img src="Images/personalweb.png" alt="Personal Website" class="w-60 mx-auto rounded-lg hover:opacity-80 transition-opacity duration-300">
+                </a>
+                <p class="mt-3 text-lg">Starting at Ksh 15,500</p>
+            </div>
+    
+            <div class="bg-white shadow-xl p-6 rounded-lg hover:scale-105 transition-transform duration-300">
+                <h3 class="text-xl font-semibold">Business Website</h3>
+                <a href="web.html">
+                    <img src="Images/busines web.jpg" alt="Business Website" class="w-60 mx-auto rounded-lg hover:opacity-80 transition-opacity duration-300">
+                </a>
+                <p class="mt-3 text-lg">Starting at Ksh 25,000</p>
+            </div>
+        </div>
+        <a href="web.html" class="mt-6 inline-block bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600">See More</a>
+    </section>
+    <!-- Social Media Section -->
+<section class="text-center py-10 bg-gray-100">
+    <h2 class="text-3xl font-semibold text-gray-800">Shine on Social Media</h2>
+    <p class="text-gray-600 mt-2">We will ensure that you have a solid digital presence on social media.</p>
+
+    <div class="mt-6 flex flex-wrap justify-center gap-6">
+        <!-- Facebook Cover -->
+        <div class="bg-white shadow-lg rounded-lg p-4 w-64 transform transition hover:scale-105">
+            <img src="Images/fb.jpg" alt="Facebook Cover" class="w-full h-40 object-cover rounded-md">
+            <h3 class="text-lg font-semibold mt-3">Facebook Cover Page</h3>
+            <p class="text-gray-500 mt-1">Starting at <span class="font-bold">Ksh 2,000</span></p>
+        </div>
+
+        <!-- Social Media Poster -->
+        <div class="bg-white shadow-lg rounded-lg p-4 w-64 transform transition hover:scale-105">
+            <img src="Images/socialposter.png" alt="Social Media Poster" class="w-full h-40 object-cover rounded-md">
+            <h3 class="text-lg font-semibold mt-3">Social Media Posters</h3>
+            <p class="text-gray-500 mt-1">Starting at <span class="font-bold">Ksh 1,500</span></p>
+        </div>
+
+        <!-- Social Media Banner -->
+        <div class="bg-white shadow-lg rounded-lg p-4 w-64 transform transition hover:scale-105">
+            <img src="Images/banner.jpg" alt="Social Media Banner" class="w-full h-40 object-cover rounded-md">
+            <h3 class="text-lg font-semibold mt-3">Social Media Banners</h3>
+            <p class="text-gray-500 mt-1">Starting at <span class="font-bold">Ksh 2,000</span></p>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Contact Section -->
+    <section class="text-center py-10 bg-gray-300">
+        <h2 class="text-2xl font-semibold">Need Our Help?</h2>
+        <p class="text-gray-600">We will help you make the best decision for your business.</p>
+        <a href="https://wa.me/254715465265" target="_blank" class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300">
+            WhatsApp Us
+        </a>
+    </section>
+
+     <!-- Footer -->
+     <footer class="bg-gray-900 text-gray-400 py-16">
+        <div class="container mx-auto grid md:grid-cols-4 gap-10 px-10">
+
+            <div>
+                <img src="Images/mine-logo.jpeg" alt="Mine Logo" class="w-20 mb-4">
+                <p>Mine is a Kenyan web design company specializing in web design, graphic design, digital marketing, and web hosting.</p>
+                <ul class="social-icons flex space-x-4 mt-4">
+                  <li><a href="#" class="text-white text-xl hover:text-blue-400"><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a href="#" class="text-white text-xl hover:text-blue-400"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="#" class="text-white text-xl hover:text-pink-400"><i class="fab fa-instagram"></i></a></li>
+                  <li><a href="#" class="text-white text-xl hover:text-blue-400"><i class="fab fa-linkedin-in"></i></a></li>
+                  <li><a href="#" class="text-white text-xl hover:text-red-400"><i class="fab fa-google-plus-g"></i></a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-white text-xl font-semibold mb-3">Navigation</h3>
+                <ul>
+                    <li><a href="#" class="hover:text-white">Home</a></li>
+                    <li><a href="#" class="hover:text-white">About</a></li>
+                    <li><a href="#" class="hover:text-white">Our Blog</a></li>
+                    <li><a href="#" class="hover:text-white">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-white text-xl font-semibold mb-3">Useful Links</h3>
+                <ul>
+                    <li><a href="#" class="hover:text-white">Logo Design</a></li>
+                    <li><a href="#" class="hover:text-white">Web Design</a></li>
+                    <li><a href="#" class="hover:text-white">Digital Marketing</a></li>
+                    <li><a href="#" class="hover:text-white">Full Branding</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-white text-xl font-semibold mb-3">Contact Us</h3>
+                <ul>
+                    <li>0715 465 265 
+                        or 
+                        0746 767 896</li>
+                    <li><a href="mailto:theeron13@gmail.com" class="hover:text-white">theeron13@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Animations -->
+    <script>
+        gsap.from("nav", { duration: 1, y: -50, opacity: 0, ease: "power2.out" });
+        gsap.from("section", { duration: 1, opacity: 0, stagger: 0.3 });
+        gsap.from(".social-media-section h2", { duration: 1, opacity: 0, y: -20, ease: "power2.out" });
+    gsap.from(".social-media-section p", { duration: 1.2, opacity: 0, y: 10, delay: 0.3 });
+    gsap.from(".social-media-section .bg-white", { duration: 1, opacity: 0, scale: 0.9, stagger: 0.3, ease: "power2.out" });
+        gsap.from("h2, p, .packages div, .contact-section a, footer div", {
+        opacity: 0,
+        y: 30,
+        duration: 0.5,
+        stagger: 0.2,
+        delay: 0.3,
+        ease: "power3.out"
+    });
+    </script>
+
+</body>
+</html>

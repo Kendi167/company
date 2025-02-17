@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINE</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <style>
+        .nav-active {
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-white fixed w-full top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <a href="index.html" class="flex items-center">
+                <img src="Images/mine-logo.jpeg" alt="Mine Logo" class="h-12 w-12 rounded-full">
+                <span class="text-xl font-semibold ml-2">Linda Company</span>
+            </a>
+            <ul class="hidden md:flex space-x-6 text-gray-700">
+                <li><a href="web.html" class="hover:text-blue-500 transition">Web Design</a></li>
+                <li><a href="marketing.html" class="hover:text-blue-500 transition">Digital Marketing</a></li>
+                <li><a href="brand.html" class="hover:text-blue-500 transition">Full Branding</a></li>
+                <li><a href="#" class="hover:text-blue-500 transition">Our Work</a></li>
+            </ul>
+            <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-blue-600 transition">Get Quote</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="text-center pt-24 pb-16 bg-blue-600 text-white">
+        <h2 class="text-5xl font-bold ">Web Design</h2>
+        <p class="text-lg ">Get a modern website within 1-4 weeks.</p>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages text-center py-16">
+        <h2 class="text-4xl font-bold ">Which Package Do You Want?</h2>
+        <p class="text-lg text-gray-700 ">The following are the top websites that most of our clients are requesting!</p>
+
+        <div class="grid md:grid-cols-3 gap-8 px-10 mt-10">
+            <div class="bg-white p-6 rounded-lg shadow-md ">
+                <h3 class="text-2xl font-semibold">Personal Website</h3>
+                <img src="Images/personalweb.png" alt="Personal Website" class="rounded-lg mt-4">
+                <p class="text-gray-600 mt-2">Starting at Ksh 15,500</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md ">
+                <h3 class="text-2xl font-semibold">Business Website</h3>
+                <img src="Images/busines web.jpg" alt="Business Website" class="rounded-lg mt-4">
+                <p class="text-gray-600 mt-2">Starting at Ksh 25,000</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md ">
+                <h3 class="text-2xl font-semibold">eCommerce Website</h3>
+                <img src="Images/ecomweb.jpg" alt="eCommerce Website" class="rounded-lg mt-4">
+                <p class="text-gray-600 mt-2">Starting at Ksh 42,000</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="guarantees py-16 bg-gray-100 text-center">
+      <h2 class="text-4xl font-bold text-gray-800">What We Guarantee</h2>
+      <p class="text-lg text-gray-600 mt-3">This is what you'll achieve with our professional web design services</p>
+  
+      <!-- Guarantee Cards Grid -->
+      <div class="grid md:grid-cols-3 gap-8 px-10 mt-10">
+          <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+              <i class="fas fa-desktop text-blue-500 text-5xl"></i>
+              <h3 class="text-2xl font-semibold mt-3">Your Own Website</h3>
+              <p class="text-gray-600 mt-2">A stunningly designed website that meets all technical standards.</p>
+          </div>
+  
+          <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+              <i class="fas fa-database text-green-500 text-5xl"></i>
+              <h3 class="text-2xl font-semibold mt-3">Exceptional Hosting</h3>
+              <p class="text-gray-600 mt-2">Lightning-fast and high-performance hosting for your site.</p>
+          </div>
+  
+          <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+              <i class="fas fa-search text-purple-500 text-5xl"></i>
+              <h3 class="text-2xl font-semibold mt-3">Domain Name</h3>
+              <p class="text-gray-600 mt-2">Get a custom domain name for your business, complete with all the benefits.</p>
+          </div>
+      </div>
+  
+      <div class="grid md:grid-cols-3 gap-8 px-10 mt-10">
+          <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+              <i class="fas fa-mouse-pointer text-red-500 text-5xl"></i>
+              <h3 class="text-2xl font-semibold mt-3">Unlimited Visibility</h3>
+              <p class="text-gray-600 mt-2">Maintain a 24/7 online presence to attract new and returning clients.</p>
+          </div>
+  
+          <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+              <i class="fas fa-headset text-yellow-500 text-5xl"></i>
+              <h3 class="text-2xl font-semibold mt-3">Continuous Support</h3>
+              <p class="text-gray-600 mt-2">Our dedicated team is here to address all your questions and concerns.</p>
+          </div>
+  
+          <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+              <i class="fas fa-chart-line text-indigo-500 text-5xl"></i>
+              <h3 class="text-2xl font-semibold mt-3">95%+ Customer Satisfaction</h3>
+              <p class="text-gray-600 mt-2">We guarantee satisfaction when creating your website.</p>
+          </div>
+      </div>
+  </section>
+
+    <!-- Contact Section -->
+    <section class="text-center py-20 bg-gray-800 text-white">
+        <h2 class="text-4xl font-bold ">Need Our Help?</h2>
+        <p class="text-lg ">We will help you make the best decision for your business.</p>
+        <a href="https://wa.me/254715465265" target="_blank" class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300">
+            WhatsApp Us
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-16">
+        <div class="container mx-auto grid md:grid-cols-4 gap-10 px-10">
+
+            <div>
+                <img src="Images/mine-logo.jpeg" alt="Mine Logo" class="w-20 mb-4">
+                <p>Mine is a Kenyan web design company specializing in web design, graphic design, digital marketing, and web hosting.</p>
+                <ul class="social-icons flex space-x-4 mt-4">
+                  <li><a href="#" class="text-white text-xl hover:text-blue-400"><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a href="#" class="text-white text-xl hover:text-blue-400"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="#" class="text-white text-xl hover:text-pink-400"><i class="fab fa-instagram"></i></a></li>
+                  <li><a href="#" class="text-white text-xl hover:text-blue-400"><i class="fab fa-linkedin-in"></i></a></li>
+                  <li><a href="#" class="text-white text-xl hover:text-red-400"><i class="fab fa-google-plus-g"></i></a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-white text-xl font-semibold mb-3">Navigation</h3>
+                <ul>
+                    <li><a href="#" class="hover:text-white">Home</a></li>
+                    <li><a href="#" class="hover:text-white">About</a></li>
+                    <li><a href="#" class="hover:text-white">Our Blog</a></li>
+                    <li><a href="#" class="hover:text-white">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-white text-xl font-semibold mb-3">Useful Links</h3>
+                <ul>
+                    <li><a href="#" class="hover:text-white">Logo Design</a></li>
+                    <li><a href="#" class="hover:text-white">Web Design</a></li>
+                    <li><a href="#" class="hover:text-white">Digital Marketing</a></li>
+                    <li><a href="#" class="hover:text-white">Full Branding</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-white text-xl font-semibold mb-3">Contact Us</h3>
+                <ul>
+                    <li>0715 465 265 or 0746 767 896</li>
+                    <li><a href="mailto:theeron13@gmail.com" class="hover:text-white">theeron13@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Navbar Scroll Effect
+        window.addEventListener("scroll", function () {
+            let nav = document.querySelector("nav");
+            nav.classList.toggle("nav-active", window.scrollY > 50);
+        });
+
+        // GSAP Animations
+        document.addEventListener("DOMContentLoaded", function () {
+            gsap.from("h2, p, .packages div, .contact-section a, footer div", {
+                opacity: 0,
+                y: 30,
+                duration: 0.5,
+                stagger: 0.2,
+                delay: 0.3,
+                ease: "power3.out"
+            });
+
+            gsap.from(".guarantees h2, .guarantees p, .guarantees .grid div", {
+            opacity: 0,
+            y: 30,
+            duration: 0.5,
+            stagger: 0.2,
+            delay: 0.3,
+            ease: "power3.out"
+        });
+        });
+    </script>
+
+</body>
+</html>
