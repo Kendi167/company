@@ -11,248 +11,538 @@
 <body class="bg-gray-50 text-gray-800">
 
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full top-0 z-50 transition-all duration-300">
+    <nav class="fixed w-full top-0 z-50 bg-white/70 backdrop-blur-md shadow-md transition-all duration-300">
         <div class="container mx-auto flex justify-between items-center p-4">
-          <a href="#" class="flex items-center">
-            <img src="Images/mine-logo.jpeg" alt="Mine Logo" class="h-12 w-12 rounded-full">
-            <span class="text-xl font-semibold ml-2">Linda Company</span>
+          <!-- Logo -->
+          <a href="index.html" class="flex items-center group">
+            <img src="Images/logo.jpg" alt="Mine Logo"
+              class="h-12 w-12 rounded-full border-2 border-blue-500 group-hover:scale-110 transition-transform duration-300" />
+            <span
+              class="text-2xl font-extrabold ml-3 bg-gradient-to-r from-blue-500 to-indigo-600 bg-clip-text text-transparent">WebNest
+              Ke.</span>
           </a>
-          <ul class="hidden md:flex space-x-6">
-            <li><a href="web.html" class="hover:text-blue-500 transition">Web Design</a></li>
-            <li><a href="marketing.html" class="hover:text-blue-500 transition">Digital Marketing</a></li>
-            <li><a href="brand.html" class="hover:text-blue-500 transition">Full Branding</a></li>
-            <li><a href="#" class="hover:text-blue-500 transition">Our Work</a></li>
+    
+          <!-- Desktop Menu -->
+          <ul class="hidden md:flex items-center space-x-8 text-gray-800 font-medium">
+            <li>
+              <a href="web.html" class="relative group hover:text-blue-600 transition duration-300">
+                Web Design
+                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full"></span>
+              </a>
+            </li>
+            <li>
+              <a href="marketing.html" class="relative group hover:text-blue-600 transition duration-300">
+                Digital Marketing
+                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full"></span>
+              </a>
+            </li>
+            <li>
+              <a href="brand.html" class="relative group hover:text-blue-600 transition duration-300">
+                Full Branding
+                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full"></span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="relative group hover:text-blue-600 transition duration-300">
+                Our Work
+                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full"></span>
+              </a>
+            </li>
           </ul>
-          <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-blue-600 transition">Get Quote</a>
+    
+          <!-- CTA Button -->
+          <a href="#"
+            class="hidden md:inline-block bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-5 py-2 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transform transition-all duration-300">
+            Get Quote
+          </a>
+    
+          <!-- Mobile Menu Button -->
+          <button id="menu-button" class="md:hidden text-gray-700 hover:text-blue-600 focus:outline-none">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+    
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/90 backdrop-blur-md shadow-lg border-t border-gray-200">
+          <ul class="flex flex-col p-4 space-y-4 text-gray-700 font-medium">
+            <li>
+              <a href="web.html" class="hover:text-blue-600 transition">Web Design</a>
+            </li>
+            <li>
+              <a href="marketing.html" class="hover:text-blue-600 transition">Digital Marketing</a>
+            </li>
+            <li>
+              <a href="brand.html" class="hover:text-blue-600 transition">Full Branding</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-blue-600 transition">Our Work</a>
+            </li>
+            <li>
+              <a href="#"
+                class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 rounded-full text-center shadow-md hover:shadow-xl transition-all">Get
+                Quote</a>
+            </li>
+          </ul>
         </div>
       </nav>
 
     <!-- Hero Section -->
-    <section class="hero bg-blue-500 text-white text-center py-5 px-10 flex flex-col md:flex-row items-center justify-between">
-        <div class="md:w-1/2 text-center md:text-left">
-            <h1 class="text-4xl font-bold">Digital Marketing Services</h1>
-            <p class="mt-2">We help you create a solution that has a long-term brand impact.</p>
+    <section class="relative overflow-hidden text-white py-20 px-8 md:px-16 bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700 flex flex-col-reverse md:flex-row items-center justify-between">
+        <!-- Animated glowing orbs -->
+        <div class="absolute top-0 left-0 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
+      
+        <!-- Text Section -->
+        <div class="relative z-10 md:w-1/2 text-center md:text-left space-y-4">
+          <h1 class="text-5xl md:text-6xl font-extrabold leading-tight drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]">
+            Power Up Your Brand with <span class="text-yellow-300">Digital Marketing</span>
+          </h1>
+          <p class="text-lg md:text-xl text-blue-100 max-w-lg">
+            We create smart, data-driven marketing strategies that boost visibility, build trust, and grow your brand’s impact online.
+          </p>
+      
+          <!-- CTA Buttons -->
+          <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <a href="#contact" 
+               class="bg-yellow-400 text-blue-900 font-semibold py-3 px-8 rounded-full text-lg hover:bg-yellow-300 hover:scale-105 transform transition-all duration-300 shadow-lg">
+               Get Started
+            </a>
+            <a href="#services"
+               class="border-2 border-white/70 text-white font-semibold py-3 px-8 rounded-full text-lg hover:bg-white hover:text-blue-800 hover:scale-105 transition-all duration-300">
+               View Services
+            </a>
+          </div>
         </div>
-        <div class="mt-6 md:mt-0 md:w-1/2 flex justify-center">
-            <img src="Images/hero1.jpg" alt="Person working on a laptop with social media icons" class="w-3/4 md:w-1/2 rounded-lg shadow-lg">
+      
+        <!-- Image Section -->
+        <div class="relative z-10 md:w-1/2 flex justify-center mb-10 md:mb-0">
+          <div class="relative group">
+            <img src="Images/marktt.jpg" alt="Person working on laptop with social media icons"
+                 class="w-4/5 md:w-3/4 rounded-2xl shadow-2xl transform group-hover:scale-105 transition duration-500 ease-out">
+            <!-- Floating glow overlay -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-yellow-300/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
+          </div>
         </div>
-    </section>
+      </section>
+      
     
     <!-- Hero Section 2 -->
-    <section class="hero bg-gray-100 text-gray-800 py-10 px-6 flex justify-center">
-        <div class="container max-w-3xl text-center animate-fade-in">
-            <h1 class="text-3xl font-bold">Digital Marketing Services</h1>
-            <div class="line w-20 h-1 bg-blue-500 mx-auto my-4"></div>
-            <p class="text-lg leading-relaxed">
-                Create a splendid first impression with spectacular web designing services. <strong>RON Digital Web Designing</strong> excels in creating websites for various niches. 
-                We have a holistic way of designing a website to match your business needs. Web designing is one of the key elements in the entire digital marketing plan. 
-                Our team understands the nuances of UI/UX and usability, and we can embellish your ideas with awe-inspiring web designs which would be user-friendly. 
-                Moreover, we understand various business requirements, and our goal is to bring good designs to the forefront.
-            </p>
+    <section class="relative overflow-hidden bg-gradient-to-b from-gray-100 via-white to-blue-50 text-gray-800 py-20 px-6 flex justify-center">
+        <!-- Decorative blur glow -->
+        <div class="absolute top-10 left-20 w-40 h-40 bg-blue-300/20 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-10 right-20 w-56 h-56 bg-indigo-300/20 rounded-full blur-3xl animate-pulse"></div>
+      
+        <div class="relative z-10 container max-w-4xl text-center animate-fade-in">
+          <h1 class="text-5xl md:text-6xl font-extrabold text-blue-900 drop-shadow-sm">
+            Digital Marketing Services
+          </h1>
+      
+          <div class="w-24 h-1 bg-blue-500 mx-auto my-6 rounded-full"></div>
+      
+          <p class="text-lg md:text-xl leading-relaxed text-gray-700 max-w-3xl mx-auto">
+            Create a <span class="font-semibold text-blue-600">lasting first impression</span> with 
+            our <span class="font-semibold text-indigo-600">spectacular web design and digital marketing services.</span>  
+            <strong>WebNest Ke</strong> crafts visually stunning and performance-driven websites 
+            that elevate your brand’s online presence.  
+            Our creative experts blend <span class="text-blue-700 font-medium">UI/UX design, branding,</span> and 
+            <span class="text-indigo-700 font-medium">marketing strategy</span> to create digital experiences 
+            that engage users and drive conversions.  
+            Every website we design is built with your business goals in mind — elegant, responsive, and 
+            <span class="font-semibold text-blue-600">ready to grow your brand.</span>
+          </p>
+      
+          <!-- CTA Button -->
+          <a href="#contact"
+             class="mt-10 inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-full text-lg hover:bg-blue-500 hover:scale-105 transform transition-all duration-300 shadow-lg">
+             Let’s Build Your Brand
+          </a>
         </div>
-    </section>
+      </section>
+      
 
-    <!-- Services Section -->
-    <section class="services text-center py-16">
-        <h2 class="text-3xl font-bold">Our Digital Marketing Services</h2>
-        <p class="text-gray-600 mt-2">Our services are carefully designed to cater to your unique goals and needs.</p>
-
-        <div class="mt-8 flex flex-wrap justify-center gap-6">
-            <!-- SEO Services -->
-            <div class="bg-white shadow-lg rounded-lg p-6 w-80 transform transition hover:scale-105">
-                <h3 class="text-lg font-semibold">SEO Services</h3>
-                <p class="text-gray-500 mt-2">Unlock your digital potential with our SEO strategies.</p>
-                <img src="Images/seo.jpg" alt="SEO Services" class="mt-4 w-full rounded-md">
-            </div>
-
-            <!-- Paid Advertising -->
-            <div class="bg-white shadow-lg rounded-lg p-6 w-80 transform transition hover:scale-105">
-                <h3 class="text-lg font-semibold">Paid Advertising</h3>
-                <p class="text-gray-500 mt-2">Experience the power of targeted advertising.</p>
-                <img src="Images/paid.png" alt="Paid Advertising" class="mt-4 w-full rounded-md">
-            </div>
-
-            <!-- Social Media Marketing -->
-            <div class="bg-white shadow-lg rounded-lg p-6 w-80 transform transition hover:scale-105">
-                <h3 class="text-lg font-semibold">Social Media Marketing</h3>
-                <p class="text-gray-500 mt-2">Boost your brand on social media platforms.</p>
-                <img src="Images/socialmedia.png" alt="Social Media Marketing" class="mt-4 w-full rounded-md">
-            </div>
-        </div>
-    </section>
-    <!-- Digital Strategy Section -->
-<section class="digital-strategy bg-gray-100 py-12 px-6 text-center">
-    <h2 class="text-3xl font-bold text-gray-800">Our Digital Strategy & Approach:</h2>
-    <p class="text-lg text-gray-600 mt-2">Our Digital Strategy is well arranged in a way that would pave the way for positive results.</p>
-
-    <div class="strategy-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-        <div class="strategy-box bg-white p-6 rounded-lg shadow-lg animate-fade-in">
-            <span class="step-number text-blue-500 text-2xl font-bold">01</span>
-            <h3 class="text-xl font-semibold mt-2">Request for Proposal</h3>
-            <p class="text-gray-600 mt-2">Our executive will reach out to you to understand your business and marketing needs.</p>
-        </div>
-
-        <div class="strategy-box bg-white p-6 rounded-lg shadow-lg animate-fade-in">
-            <span class="step-number text-blue-500 text-2xl font-bold">02</span>
-            <h3 class="text-xl font-semibold mt-2">Business Analysis & Proposal</h3>
-            <p class="text-gray-600 mt-2">We analyze your requirements and provide a quotation for our services.</p>
-        </div>
-
-        <div class="strategy-box bg-white p-6 rounded-lg shadow-lg animate-fade-in">
-            <span class="step-number text-blue-500 text-2xl font-bold">03</span>
-            <h3 class="text-xl font-semibold mt-2">Auditing Process</h3>
-            <p class="text-gray-600 mt-2">We conduct a detailed audit of your website, competitors, and digital strategies.</p>
-        </div>
-
-        <div class="strategy-box bg-white p-6 rounded-lg shadow-lg animate-fade-in">
-            <span class="step-number text-blue-500 text-2xl font-bold">04</span>
-            <h3 class="text-xl font-semibold mt-2">Digital Marketing Implementation</h3>
-            <p class="text-gray-600 mt-2">Our team will execute selected marketing strategies tailored for your business.</p>
-        </div>
-
-        <div class="strategy-box bg-white p-6 rounded-lg shadow-lg animate-fade-in">
-            <span class="step-number text-blue-500 text-2xl font-bold">05</span>
-            <h3 class="text-xl font-semibold mt-2">Measuring Results</h3>
-            <p class="text-gray-600 mt-2">We track and optimize campaigns based on feedback and performance data.</p>
-        </div>
-
-        <div class="strategy-box bg-white p-6 rounded-lg shadow-lg animate-fade-in">
-            <span class="step-number text-blue-500 text-2xl font-bold">06</span>
-            <h3 class="text-xl font-semibold mt-2">Optimize & Scale</h3>
-            <p class="text-gray-600 mt-2">We refine and scale marketing strategies based on performance insights.</p>
-        </div>
-    </div>
-</section>
-
-<!-- Pricing Section -->
-<section class="pricing bg-white py-12 px-6 text-center">
-    <h2 class="text-3xl font-bold text-gray-800">Conduct Digital Marketing</h2>
-    <p class="text-lg text-gray-600 mt-2">We will create and execute an effective digital marketing plan that suits your business needs.</p>
-
-    <div class="pricing-table grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
-        <div class="pricing-card bg-blue-100 p-6 rounded-lg shadow-lg hover:scale-105 transition">
-            <h3 class="text-2xl font-semibold">Starter</h3>
-            <p class="text-xl font-bold text-blue-600 mt-2">Ksh 15,000</p>
-            <ul class="text-gray-600 mt-4 space-y-2">
+      <section class="relative bg-gradient-to-b from-white via-blue-50 to-blue-100 py-20 px-6 text-center overflow-hidden">
+        <!-- Glowing background orbs -->
+        <div class="absolute top-10 left-10 w-40 h-40 bg-blue-400/20 blur-3xl rounded-full animate-pulse"></div>
+        <div class="absolute bottom-10 right-10 w-56 h-56 bg-indigo-400/20 blur-3xl rounded-full animate-pulse"></div>
+      
+        <div class="relative z-10">
+          <h2 class="text-5xl font-extrabold text-blue-900 drop-shadow-sm">Conduct Digital Marketing</h2>
+          <p class="text-lg text-gray-700 mt-4 max-w-2xl mx-auto">
+            Let’s grow your brand with <span class="font-semibold text-blue-600">data-driven</span>,
+            <span class="font-semibold text-indigo-600">creative marketing strategies</span> designed for success.
+          </p>
+      
+          <!-- Pricing Cards -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-14 max-w-6xl mx-auto">
+            
+            <!-- Starter Package -->
+            <div class="group bg-white/90 backdrop-blur-sm border border-blue-200 p-8 rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+              <h3 class="text-2xl font-bold text-blue-700 group-hover:text-blue-800 transition">Starter</h3>
+              <p class="text-3xl font-extrabold text-blue-600 mt-3">Ksh 15,000</p>
+              <ul class="text-gray-600 mt-6 space-y-3 text-left">
                 <li>✅ Social Media Account Setup</li>
                 <li>✅ 5 Custom Social Media Posts</li>
                 <li>✅ 1 Social Media Banner</li>
                 <li>✅ 3 Weeks Boosted Post Campaign</li>
                 <li>✅ Basic Analytics Reporting</li>
-            </ul>
-            <button class="choose-btn bg-blue-600 text-white px-5 py-2 rounded-full mt-4 hover:bg-blue-700">CHOOSE PACKAGE</button>
-        </div>
-
-        <div class="pricing-card bg-green-100 p-6 rounded-lg shadow-lg hover:scale-105 transition">
-            <h3 class="text-2xl font-semibold">Growth</h3>
-            <p class="text-xl font-bold text-green-600 mt-2">Ksh 30,000</p>
-            <ul class="text-gray-600 mt-4 space-y-2">
+              </ul>
+              <button class="mt-8 bg-blue-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-blue-700 transition-all hover:scale-105 shadow-md">
+                Choose Package
+              </button>
+            </div>
+      
+            <!-- Growth Package (FEATURED) -->
+            <div class="group relative bg-gradient-to-b from-green-50 via-white to-green-100 border-2 border-green-400 p-10 rounded-3xl shadow-2xl transform scale-105 hover:scale-110 transition-all duration-300">
+              <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-green-500 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-md">
+                🌟 Most Popular
+              </div>
+              <h3 class="text-2xl font-bold text-green-700">Growth</h3>
+              <p class="text-3xl font-extrabold text-green-600 mt-3">Ksh 30,000</p>
+              <ul class="text-gray-700 mt-6 space-y-3 text-left">
                 <li>✅ Social Media Account Management</li>
                 <li>✅ 15 Custom Social Media Posts</li>
                 <li>✅ 2 Social Media Banners</li>
                 <li>✅ 2 Boosted Post Campaigns</li>
-                <li>✅ Basic Analytics Reporting</li>
-            </ul>
-            <button class="choose-btn bg-green-600 text-white px-5 py-2 rounded-full mt-4 hover:bg-green-700">CHOOSE PACKAGE</button>
-        </div>
-
-        <div class="pricing-card bg-yellow-100 p-6 rounded-lg shadow-lg hover:scale-105 transition">
-            <h3 class="text-2xl font-semibold">Premium</h3>
-            <p class="text-xl font-bold text-yellow-600 mt-2">Ksh 60,000</p>
-            <ul class="text-gray-600 mt-4 space-y-2">
-                <li>✅ Social Media Account Management (2 Months)</li>
+                <li>✅ Advanced Analytics Reporting</li>
+              </ul>
+              <button class="mt-8 bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition-all hover:scale-105 shadow-md">
+                Choose Package
+              </button>
+            </div>
+      
+            <!-- Premium Package -->
+            <div class="group bg-white/90 backdrop-blur-sm border border-yellow-200 p-8 rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+              <h3 class="text-2xl font-bold text-yellow-700 group-hover:text-yellow-800 transition">Premium</h3>
+              <p class="text-3xl font-extrabold text-yellow-600 mt-3">Ksh 60,000</p>
+              <ul class="text-gray-600 mt-6 space-y-3 text-left">
+                <li>✅ Social Media Management (2 Months)</li>
                 <li>✅ 30 Custom Social Media Posts</li>
                 <li>✅ 3 Social Media Banners</li>
                 <li>✅ 1 Custom Video Post</li>
                 <li>✅ 3 Boosted Campaigns</li>
-                <li>✅ Basic Analytics Reporting</li>
-            </ul>
-            <button class="choose-btn bg-yellow-600 text-white px-5 py-2 rounded-full mt-4 hover:bg-yellow-700">CHOOSE PACKAGE</button>
+                <li>✅ Full Performance Analytics</li>
+              </ul>
+              <button class="mt-8 bg-yellow-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-yellow-700 transition-all hover:scale-105 shadow-md">
+                Choose Package
+              </button>
+            </div>
+          </div>
+      
+          <!-- Call to Action -->
+          <div class="mt-14">
+            <a href="contact.html"
+               class="inline-block bg-blue-700 text-white font-semibold py-3 px-10 rounded-full text-lg hover:bg-blue-600 hover:scale-105 transform transition-all duration-300 shadow-lg">
+              Talk to Our Team 🚀
+            </a>
+          </div>
         </div>
+      </section>
+      
+
+    <!-- Services Section -->
+    <section class="relative text-center py-20 bg-gradient-to-b from-white via-blue-50 to-blue-100 overflow-hidden">
+        <!-- Background Effects -->
+        <div class="absolute top-10 left-10 w-40 h-40 bg-blue-300/20 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-10 right-20 w-56 h-56 bg-indigo-300/20 rounded-full blur-3xl animate-pulse"></div>
+      
+        <div class="relative z-10">
+          <h2 class="text-5xl font-extrabold text-blue-900 drop-shadow-sm">Our Digital Marketing Services</h2>
+          <p class="text-gray-700 mt-3 text-lg max-w-2xl mx-auto">
+            Our tailored strategies are crafted to <span class="font-semibold text-blue-600">boost your visibility</span>,
+            <span class="font-semibold text-indigo-600">engage your audience</span>, and
+            <span class="font-semibold text-blue-600">drive real results.</span>
+          </p>
+      
+          <div class="mt-12 flex flex-wrap justify-center gap-8 px-6">
+            <!-- SEO Services -->
+            <div class="group relative bg-white shadow-lg rounded-2xl p-6 w-80 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:bg-gradient-to-b from-blue-50 to-white">
+              <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
+              <div class="relative z-10">
+                <div class="text-blue-600 text-5xl mb-3">
+                  <i class="fas fa-search"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 group-hover:text-blue-700 transition">SEO Optimization</h3>
+                <p class="text-gray-600 mt-2">Unlock your business potential with our cutting-edge SEO strategies that drive organic growth.</p>
+                <img src="Images/seo.jpg" alt="SEO Services" class="mt-5 w-full h-44 object-cover rounded-md">
+                <a href="#" class="mt-4 inline-block text-blue-600 font-semibold hover:text-blue-800 transition">Learn More →</a>
+              </div>
+            </div>
+      
+            <!-- Paid Advertising -->
+            <div class="group relative bg-white shadow-lg rounded-2xl p-6 w-80 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:bg-gradient-to-b from-yellow-50 to-white">
+              <div class="absolute inset-0 bg-gradient-to-tr from-yellow-400/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
+              <div class="relative z-10">
+                <div class="text-yellow-500 text-5xl mb-3">
+                  <i class="fas fa-bullhorn"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 group-hover:text-yellow-600 transition">Paid Advertising</h3>
+                <p class="text-gray-600 mt-2">Reach the right audience with precision through Google Ads, Meta campaigns, and more.</p>
+                <img src="Images/paid.png" alt="Paid Advertising" class="mt-5 w-full h-44 object-cover rounded-md">
+                <a href="#" class="mt-4 inline-block text-yellow-600 font-semibold hover:text-yellow-700 transition">Learn More →</a>
+              </div>
+            </div>
+      
+            <!-- Social Media Marketing -->
+            <div class="group relative bg-white shadow-lg rounded-2xl p-6 w-80 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:bg-gradient-to-b from-indigo-50 to-white">
+              <div class="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
+              <div class="relative z-10">
+                <div class="text-indigo-600 text-5xl mb-3">
+                  <i class="fas fa-hashtag"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 group-hover:text-indigo-700 transition">Social Media Marketing</h3>
+                <p class="text-gray-600 mt-2">Amplify your online presence and engage customers across social platforms.</p>
+                <img src="Images/socialmedia.png" alt="Social Media Marketing" class="mt-5 w-full h-44 object-cover rounded-md">
+                <a href="#" class="mt-4 inline-block text-indigo-600 font-semibold hover:text-indigo-800 transition">Learn More →</a>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Call-to-Action -->
+          <div class="mt-12">
+            <a href="https://wa.me/254715465265" target="_blank"
+               class="inline-block bg-blue-600 text-white font-semibold py-3 px-10 rounded-full text-lg hover:bg-blue-500 hover:scale-105 transform transition-all duration-300 shadow-lg">
+              Let’s Talk Marketing 🚀
+            </a>
+          </div>
+        </div>
+      </section>
+      
+<!-- 🌐 Digital Strategy Section -->
+<section class="digital-strategy bg-gradient-to-b from-white to-blue-100 py-16 px-6 text-center">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-4xl font-extrabold text-gray-800">Our Digital Strategy & Approach</h2>
+      <div class="w-24 h-1 bg-blue-500 mx-auto my-4 rounded-full"></div>
+      <p class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+        We follow a structured digital strategy designed to deliver measurable, impactful results — from understanding your goals to scaling your success.
+      </p>
+  
+      <div class="strategy-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        <!-- Step Box -->
+        <div class="strategy-box bg-white hover:bg-blue-50 border border-gray-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
+          <span class="text-blue-600 text-4xl font-extrabold block mb-3">01</span>
+          <h3 class="text-xl font-semibold text-gray-800">Request for Proposal</h3>
+          <p class="text-gray-600 mt-3">Our team connects with you to understand your business objectives and marketing vision.</p>
+        </div>
+  
+        <div class="strategy-box bg-white hover:bg-blue-50 border border-gray-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
+          <span class="text-blue-600 text-4xl font-extrabold block mb-3">02</span>
+          <h3 class="text-xl font-semibold text-gray-800">Business Analysis & Proposal</h3>
+          <p class="text-gray-600 mt-3">We analyze your needs and craft a customized proposal to achieve your goals.</p>
+        </div>
+  
+        <div class="strategy-box bg-white hover:bg-blue-50 border border-gray-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
+          <span class="text-blue-600 text-4xl font-extrabold block mb-3">03</span>
+          <h3 class="text-xl font-semibold text-gray-800">Auditing Process</h3>
+          <p class="text-gray-600 mt-3">We assess your website, audience, and competitors to develop a focused strategy.</p>
+        </div>
+  
+        <div class="strategy-box bg-white hover:bg-blue-50 border border-gray-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
+          <span class="text-blue-600 text-4xl font-extrabold block mb-3">04</span>
+          <h3 class="text-xl font-semibold text-gray-800">Digital Marketing Implementation</h3>
+          <p class="text-gray-600 mt-3">We execute powerful campaigns tailored to boost engagement and ROI.</p>
+        </div>
+  
+        <div class="strategy-box bg-white hover:bg-blue-50 border border-gray-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
+          <span class="text-blue-600 text-4xl font-extrabold block mb-3">05</span>
+          <h3 class="text-xl font-semibold text-gray-800">Measuring Results</h3>
+          <p class="text-gray-600 mt-3">We monitor performance and optimize campaigns using real-time analytics.</p>
+        </div>
+  
+        <div class="strategy-box bg-white hover:bg-blue-50 border border-gray-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
+          <span class="text-blue-600 text-4xl font-extrabold block mb-3">06</span>
+          <h3 class="text-xl font-semibold text-gray-800">Optimize & Scale</h3>
+          <p class="text-gray-600 mt-3">We fine-tune strategies and scale successful campaigns for long-term growth.</p>
+        </div>
+      </div>
     </div>
-</section>
-
-<!-- Why Choose Us Section -->
-<section class="why-choose-us bg-gray-100 py-12 px-6 text-center">
-    <h2 class="text-3xl font-bold text-gray-800">Why Choose Us?</h2>
-
-    <div class="feature-cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-10">
-        <div class="feature-card bg-white p-6 rounded-lg shadow-lg hover:scale-105 transition transform duration-300 animate-fade-in">
-            <i class="fas fa-chart-line text-blue-500 text-4xl"></i>
-            <h3 class="text-xl font-semibold mt-4">Experience</h3>
-            <p class="text-gray-600 mt-2">With over 15 years in the industry, we have the knowledge and expertise to deliver results.</p>
+  </section>
+  
+  <!-- 💎 Why Choose Us Section -->
+  <section class="why-choose-us bg-gradient-to-t from-white to-blue-50 py-16 px-6 text-center">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-extrabold text-gray-800">Why Choose <span class="text-blue-600">WebNest KE</span>?</h2>
+      <div class="w-24 h-1 bg-blue-500 mx-auto my-4 rounded-full"></div>
+      <p class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+        We blend creativity, strategy, and technology to deliver next-level digital experiences that elevate your brand.
+      </p>
+  
+      <div class="feature-cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-12">
+        <div class="feature-card bg-white border border-gray-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+          <i class="fas fa-chart-line text-blue-500 text-5xl mb-4"></i>
+          <h3 class="text-xl font-semibold text-gray-800">Proven Expertise</h3>
+          <p class="text-gray-600 mt-3">With over 15 years of experience, we know what works — and how to make it work for you.</p>
         </div>
-
-        <div class="feature-card bg-white p-6 rounded-lg shadow-lg hover:scale-105 transition transform duration-300 animate-fade-in">
-            <i class="fas fa-trophy text-yellow-500 text-4xl"></i>
-            <h3 class="text-xl font-semibold mt-4">Proven Success</h3>
-            <p class="text-gray-600 mt-2">Our track record of successful campaigns and satisfied clients speaks for itself.</p>
+  
+        <div class="feature-card bg-white border border-gray-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+          <i class="fas fa-bolt text-yellow-500 text-5xl mb-4"></i>
+          <h3 class="text-xl font-semibold text-gray-800">Creative & Dynamic</h3>
+          <p class="text-gray-600 mt-3">We infuse creativity into every campaign to make your brand unforgettable.</p>
         </div>
-
-        <div class="feature-card bg-white p-6 rounded-lg shadow-lg hover:scale-105 transition transform duration-300 animate-fade-in">
-            <i class="fas fa-robot text-green-500 text-4xl"></i>
-            <h3 class="text-xl font-semibold mt-4">Leverage AI Tools</h3>
-            <p class="text-gray-600 mt-2">Our team leverages AI tools to create bespoke digital marketing campaigns.</p>
+  
+        <div class="feature-card bg-white border border-gray-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+          <i class="fas fa-robot text-green-500 text-5xl mb-4"></i>
+          <h3 class="text-xl font-semibold text-gray-800">AI-Powered Marketing</h3>
+          <p class="text-gray-600 mt-3">We use advanced AI tools to personalize and optimize your campaigns for better performance.</p>
         </div>
-
-        <div class="feature-card bg-white p-6 rounded-lg shadow-lg hover:scale-105 transition transform duration-300 animate-fade-in">
-            <i class="fas fa-cog text-purple-500 text-4xl"></i>
-            <h3 class="text-xl font-semibold mt-4">Tailored Solutions</h3>
-            <p class="text-gray-600 mt-2">We create customized strategies to meet your specific business goals.</p>
+  
+        <div class="feature-card bg-white border border-gray-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+          <i class="fas fa-users text-red-500 text-5xl mb-4"></i>
+          <h3 class="text-xl font-semibold text-gray-800">Dedicated Team</h3>
+          <p class="text-gray-600 mt-3">Our creative professionals are passionate about turning your goals into success stories.</p>
         </div>
-
-        <div class="feature-card bg-white p-6 rounded-lg shadow-lg hover:scale-105 transition transform duration-300 animate-fade-in">
-            <i class="fas fa-users text-red-500 text-4xl"></i>
-            <h3 class="text-xl font-semibold mt-4">Dedicated Team</h3>
-            <p class="text-gray-600 mt-2">Our team of digital marketing experts is committed to your success.</p>
+  
+        <div class="feature-card bg-white border border-gray-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+          <i class="fas fa-handshake text-purple-500 text-5xl mb-4"></i>
+          <h3 class="text-xl font-semibold text-gray-800">Client-Centric Approach</h3>
+          <p class="text-gray-600 mt-3">We focus on your needs — every solution is designed to align perfectly with your goals.</p>
         </div>
-
-        <div class="feature-card bg-white p-6 rounded-lg shadow-lg hover:scale-105 transition transform duration-300 animate-fade-in">
-            <i class="fas fa-comment text-indigo-500 text-4xl"></i>
-            <h3 class="text-xl font-semibold mt-4">Transparent Communication</h3>
-            <p class="text-gray-600 mt-2">We keep you informed at every step of your digital marketing journey.</p>
+  
+        <div class="feature-card bg-white border border-gray-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+          <i class="fas fa-comment text-indigo-500 text-5xl mb-4"></i>
+          <h3 class="text-xl font-semibold text-gray-800">Transparent Communication</h3>
+          <p class="text-gray-600 mt-3">We keep you updated every step of the way — clarity and collaboration are our core values.</p>
         </div>
+      </div>
     </div>
-</section>
+  </section>
 
-
-
-    <!-- Need Help Section -->
-    <section class="need-help text-center py-12 bg-blue-600 text-white">
-        <h2 class="text-3xl font-bold">Need Our Help?</h2>
-        <p class="mt-2">We will help you make the best decision for your business.</p>
-        <a href="https://wa.me/254715465265" target="_blank" class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300">
-            WhatsApp Us
-        </a>
-    </section>
+    <!-- 🤝 Need Help Section -->
+<section class="need-help text-center py-16 bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 text-white">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-4xl font-extrabold mb-4">Need Our Help?</h2>
+      <p class="text-lg leading-relaxed mb-6">
+        Not sure where to start with your digital journey? <br>
+        Our experts are ready to guide you — whether it's branding, web design, or digital marketing strategy. 
+        Let’s create something extraordinary for your business today!
+      </p>
+  
+      <a href="https://wa.me/254715465265" target="_blank"
+        class="mt-4 inline-block bg-green-500 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-green-600 hover:scale-105 transition duration-300">
+        <i class="fab fa-whatsapp mr-2"></i> Chat With Us on WhatsApp
+      </a>
+  
+      <p class="mt-6 text-sm text-blue-100">
+        We typically reply within minutes — your success is our priority 🚀
+      </p>
+    </div>
+  </section>
+  
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-10">
-        <div class="container mx-auto flex flex-wrap justify-between">
-            <div class="w-full md:w-1/3 px-4">
-                <img src="Images/mine-logo.jpeg" alt="Mine Logo" class="h-12">
-                <p class="mt-4 text-gray-400">Mine is a Kenyan web design company specializing in web design, graphic design, digital marketing, and web hosting.</p>
-            </div>
-
-            <div class="w-full md:w-1/3 px-4">
-                <h3 class="text-lg font-semibold">Navigation</h3>
-                <ul class="mt-4 text-gray-400">
-                    <li><a href="#" class="hover:text-white">Home</a></li>
-                    <li><a href="#" class="hover:text-white">About</a></li>
-                    <li><a href="#" class="hover:text-white">Our Blog</a></li>
-                    <li><a href="#" class="hover:text-white">Contact</a></li>
-                </ul>
-            </div>
-
-            <div class="w-full md:w-1/3 px-4">
-                <h3 class="text-lg font-semibold">Contact Us</h3>
-                <ul class="mt-4 text-gray-400">
-                    <li>0715 465 265 or 0746 767 896</li>
-                    <li><a href="mailto:theeron13@gmail.com" class="hover:text-white">theeron13@gmail.com</a></li>
-                </ul>
-            </div>
+    <footer
+    class="relative bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-gray-300 py-16 sm:py-20 lg:py-24">
+    <div
+      class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between px-4 sm:px-10 md:px-16 lg:px-20 gap-8 md:gap-16 lg:gap-24">
+      <!-- Logo & About -->
+      <div class="md:w-1/3 text-center md:text-left">
+        <div class="relative flex justify-center md:justify-start mb-6">
+          <div class="absolute -inset-1 bg-blue-500/20 blur-lg rounded-lg"></div>
+          <img src="Images/logo.jpg" alt="Mine Logo"
+            class="relative w-20 md:w-20 rounded-lg shadow-xl ring-2 ring-blue-500/50" />
         </div>
-    </footer>
+        <p class="leading-relaxed text-gray-300 mt-2 text-base text-sm sm:text-lg">
+          <span class="text-white font-semibold">WebNest Ke</span> is a Kenyan
+          web design company specializing in
+          <span class="text-blue-400">web design</span>,
+          <span class="text-green-400">graphic design</span>,
+          <span class="text-yellow-400">digital marketing</span>, and
+          <span class="text-pink-400">web hosting</span>.
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <div class="md:w-1/4 text-center md:text-left">
+        <h3 class="text-xl font-semibold text-white mb-5 border-b-2 border-blue-500 pb-1 inline-block">
+          Navigation
+        </h3>
+        <ul class="space-y-3">
+          <li>
+            <a href="index.html" class="hover:text-blue-400 transition-all">Home</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-blue-400 transition-all">About</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-blue-400 transition-all">Our Blog</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-blue-400 transition-all">Contact</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Useful Links -->
+      <div class="md:w-1/4 text-center md:text-left">
+        <h3 class="text-xl font-semibold text-white mb-5 border-b-2 border-green-500 pb-1 inline-block">
+          Useful Links
+        </h3>
+        <ul class="space-y-3">
+          <li>
+            <a href="brand.html" class="hover:text-green-400 transition-all">Logo Design</a>
+          </li>
+          <li>
+            <a href="web.html" class="hover:text-green-400 transition-all">Web Design</a>
+          </li>
+          <li>
+            <a href="marketing.html" class="hover:text-green-400 transition-all">Digital Marketing</a>
+          </li>
+          <li>
+            <a href="brand.html" class="hover:text-green-400 transition-all">Full Branding</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="md:w-1/4 text-center md:text-left">
+        <h3 class="text-xl font-semibold text-white mb-5 border-b-2 border-pink-500 pb-1 inline-block">
+          Contact Us
+        </h3>
+        <ul class="space-y-3 text-gray-300">
+          <li class="text-lg flex justify-center md:justify-start items-center gap-3">
+            <i class="fas fa-phone-alt text-blue-400"></i> 0715465265 /
+            0746767896
+          </li>
+          <li class="flex justify-center md:justify-start">
+            <a href="mailto:theeron13@gmail.com" class="flex items-center gap-3 hover:text-blue-400 transition-all">
+              <i class="fas fa-envelope text-blue-400"></i>
+              theeron13@gmail.com
+            </a>
+          </li>
+        </ul>
+
+        <!-- Social Icons -->
+        <ul class="flex justify-center md:justify-start space-x-6 mt-8">
+          <li>
+            <a href="#"
+              class="text-2xl text-gray-300 hover:text-blue-400 hover:drop-shadow-[0_0_10px_#3b82f6] transition-all duration-300"><i
+                class="fab fa-facebook-f"></i></a>
+          </li>
+          <li>
+            <a href="#"
+              class="text-2xl text-gray-300 hover:text-sky-400 hover:drop-shadow-[0_0_10px_#38bdf8] transition-all duration-300"><i
+                class="fab fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"
+              class="text-2xl text-gray-300 hover:text-pink-400 hover:drop-shadow-[0_0_10px_#ec4899] transition-all duration-300"><i
+                class="fab fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"
+              class="text-2xl text-gray-300 hover:text-blue-500 hover:drop-shadow-[0_0_10px_#3b82f6] transition-all duration-300"><i
+                class="fab fa-linkedin-in"></i></a>
+          </li>
+          <li>
+            <a href="#"
+              class="text-2xl text-gray-300 hover:text-red-500 hover:drop-shadow-[0_0_10px_#ef4444] transition-all duration-300"><i
+                class="fab fa-google-plus-g"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 
     <!-- GSAP Animation Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>

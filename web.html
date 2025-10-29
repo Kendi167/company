@@ -7,6 +7,8 @@
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
     
     <!-- Font Awesome for Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -15,192 +17,418 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
     <style>
-        .nav-active {
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        }
+         @keyframes pulse-slow {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 0.9; transform: scale(1.1); }
+    }
+    .animate-pulse-slow { animation: pulse-slow 6s ease-in-out infinite; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-slideUp { animation: slideUp 1.2s ease-out forwards; }
     </style>
 </head>
 <body class="bg-gray-100">
 
     <!-- Navbar -->
-    <nav class="bg-white fixed w-full top-0 z-50 transition-all duration-300">
+    <nav class="fixed w-full top-0 z-50 bg-white/70 backdrop-blur-md shadow-md transition-all duration-300">
         <div class="container mx-auto flex justify-between items-center p-4">
-            <a href="index.html" class="flex items-center">
-                <img src="Images/mine-logo.jpeg" alt="Mine Logo" class="h-12 w-12 rounded-full">
-                <span class="text-xl font-semibold ml-2">Linda Company</span>
-            </a>
-            <ul class="hidden md:flex space-x-6 text-gray-700">
-                <li><a href="web.html" class="hover:text-blue-500 transition">Web Design</a></li>
-                <li><a href="marketing.html" class="hover:text-blue-500 transition">Digital Marketing</a></li>
-                <li><a href="brand.html" class="hover:text-blue-500 transition">Full Branding</a></li>
-                <li><a href="#" class="hover:text-blue-500 transition">Our Work</a></li>
-            </ul>
-            <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-blue-600 transition">Get Quote</a>
+          <!-- Logo -->
+          <a href="index.html" class="flex items-center group">
+            <img src="Images/logo.jpg" alt="Mine Logo"
+              class="h-12 w-12 rounded-full border-2 border-blue-500 group-hover:scale-110 transition-transform duration-300" />
+            <span
+              class="text-2xl font-extrabold ml-3 bg-gradient-to-r from-blue-500 to-indigo-600 bg-clip-text text-transparent">WebNest
+              Ke.</span>
+          </a>
+    
+          <!-- Desktop Menu -->
+          <ul class="hidden md:flex items-center space-x-8 text-gray-800 font-medium">
+            <li>
+              <a href="web.html" class="relative group hover:text-blue-600 transition duration-300">
+                Web Design
+                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full"></span>
+              </a>
+            </li>
+            <li>
+              <a href="marketing.html" class="relative group hover:text-blue-600 transition duration-300">
+                Digital Marketing
+                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full"></span>
+              </a>
+            </li>
+            <li>
+              <a href="brand.html" class="relative group hover:text-blue-600 transition duration-300">
+                Full Branding
+                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full"></span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="relative group hover:text-blue-600 transition duration-300">
+                Our Work
+                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full"></span>
+              </a>
+            </li>
+          </ul>
+    
+          <!-- CTA Button -->
+          <a href="#"
+            class="hidden md:inline-block bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-5 py-2 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transform transition-all duration-300">
+            Get Quote
+          </a>
+    
+          <!-- Mobile Menu Button -->
+          <button id="menu-button" class="md:hidden text-gray-700 hover:text-blue-600 focus:outline-none">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
         </div>
-    </nav>
+    
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/90 backdrop-blur-md shadow-lg border-t border-gray-200">
+          <ul class="flex flex-col p-4 space-y-4 text-gray-700 font-medium">
+            <li>
+              <a href="web.html" class="hover:text-blue-600 transition">Web Design</a>
+            </li>
+            <li>
+              <a href="marketing.html" class="hover:text-blue-600 transition">Digital Marketing</a>
+            </li>
+            <li>
+              <a href="brand.html" class="hover:text-blue-600 transition">Full Branding</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-blue-600 transition">Our Work</a>
+            </li>
+            <li>
+              <a href="#"
+                class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 rounded-full text-center shadow-md hover:shadow-xl transition-all">Get
+                Quote</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
     <!-- Hero Section -->
-    <section class="text-center pt-24 pb-16 bg-blue-600 text-white">
-        <h2 class="text-5xl font-bold ">Web Design</h2>
-        <p class="text-lg ">Get a modern website within 1-4 weeks.</p>
-    </section>
-
-    <!-- Packages Section -->
-    <section class="packages text-center py-16">
-        <h2 class="text-4xl font-bold ">Which Package Do You Want?</h2>
-        <p class="text-lg text-gray-700 ">The following are the top websites that most of our clients are requesting!</p>
-
-        <div class="grid md:grid-cols-3 gap-8 px-10 mt-10">
-            <div class="bg-white p-6 rounded-lg shadow-md ">
-                <h3 class="text-2xl font-semibold">Personal Website</h3>
-                <img src="Images/personalweb.png" alt="Personal Website" class="rounded-lg mt-4">
-                <p class="text-gray-600 mt-2">Starting at Ksh 15,500</p>
-            </div>
-
-            <div class="bg-white p-6 rounded-lg shadow-md ">
-                <h3 class="text-2xl font-semibold">Business Website</h3>
-                <img src="Images/busines web.jpg" alt="Business Website" class="rounded-lg mt-4">
-                <p class="text-gray-600 mt-2">Starting at Ksh 25,000</p>
-            </div>
-
-            <div class="bg-white p-6 rounded-lg shadow-md ">
-                <h3 class="text-2xl font-semibold">eCommerce Website</h3>
-                <img src="Images/ecomweb.jpg" alt="eCommerce Website" class="rounded-lg mt-4">
-                <p class="text-gray-600 mt-2">Starting at Ksh 42,000</p>
-            </div>
+    <section class="relative overflow-hidden text-center py-28 bg-gradient-to-br from-blue-800 via-indigo-700 to-blue-900 text-white">
+        <!-- Animated Background Glow -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.12),_transparent_70%)] animate-pulse"></div>
+      
+        <!-- Floating Gradient Orbs -->
+        <div class="absolute top-10 left-20 w-40 h-40 bg-blue-500/30 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div class="absolute bottom-10 right-16 w-52 h-52 bg-indigo-400/30 rounded-full blur-3xl animate-pulse-slow"></div>
+      
+        <!-- Decorative Gradient Line -->
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[2px] h-full bg-gradient-to-b from-transparent via-yellow-300/40 to-transparent"></div>
+      
+        <div class="relative z-10 px-6 sm:px-12">
+          <h2 class="text-5xl sm:text-6xl font-extrabold tracking-tight drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)] animate-fadeIn">
+            Elevate Your Online Presence
+          </h2>
+          <p class="mt-5 text-lg sm:text-xl text-blue-100 font-light max-w-2xl mx-auto leading-relaxed animate-slideUp">
+            Get a <span class="text-yellow-300 font-semibold">modern, high-performing website</span> built to <span class="text-white font-bold">convert and impress</span> — all within <span class="text-yellow-200 font-semibold">1–4 weeks</span>.
+          </p>
+      
+          <!-- CTA Button -->
+          <a href="https://wa.me/254715465265" target="_blank"
+            class="mt-10 inline-block bg-yellow-400 text-blue-900 font-bold py-4 px-10 rounded-full text-lg hover:bg-yellow-300 hover:scale-110 transform transition-all duration-300 shadow-lg hover:shadow-yellow-400/50 hover:drop-shadow-[0_0_10px_#fde047]">
+            🚀 Get Started Today
+          </a>
+      
+          <!-- Small Accent Line -->
+          <div class="mt-10 flex justify-center">
+            <div class="h-1 w-40 bg-gradient-to-r from-yellow-400 via-blue-500 to-yellow-400 rounded-full animate-pulse"></div>
+          </div>
         </div>
-    </section>
+      </section>
+      
 
-    <section class="guarantees py-16 bg-gray-100 text-center">
-      <h2 class="text-4xl font-bold text-gray-800">What We Guarantee</h2>
-      <p class="text-lg text-gray-600 mt-3">This is what you'll achieve with our professional web design services</p>
+      <!-- Packages Section -->
+<section class="packages text-center py-24 bg-gradient-to-b from-blue-50 to-white">
+    <h2 class="text-5xl font-extrabold text-blue-900 mb-4 tracking-tight">Which Package Do You Want?</h2>
+    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+      The following are the <span class="text-blue-700 font-semibold">top websites</span> that most of our clients request!
+    </p>
   
-      <!-- Guarantee Cards Grid -->
-      <div class="grid md:grid-cols-3 gap-8 px-10 mt-10">
-          <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
-              <i class="fas fa-desktop text-blue-500 text-5xl"></i>
-              <h3 class="text-2xl font-semibold mt-3">Your Own Website</h3>
-              <p class="text-gray-600 mt-2">A stunningly designed website that meets all technical standards.</p>
-          </div>
-  
-          <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
-              <i class="fas fa-database text-green-500 text-5xl"></i>
-              <h3 class="text-2xl font-semibold mt-3">Exceptional Hosting</h3>
-              <p class="text-gray-600 mt-2">Lightning-fast and high-performance hosting for your site.</p>
-          </div>
-  
-          <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
-              <i class="fas fa-search text-purple-500 text-5xl"></i>
-              <h3 class="text-2xl font-semibold mt-3">Domain Name</h3>
-              <p class="text-gray-600 mt-2">Get a custom domain name for your business, complete with all the benefits.</p>
-          </div>
+    <div class="grid md:grid-cols-3 gap-10 px-8 mt-16">
+      <!-- Personal Website -->
+      <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 p-8 border-t-8 border-blue-500">
+        <div class="flex justify-center mb-4">
+          <i class="fas fa-user-circle text-blue-600 text-5xl group-hover:scale-110 transition-transform duration-500"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-blue-900 group-hover:text-blue-600 transition-colors duration-300">Personal Website</h3>
+        <img src="Images/personalweb.png" alt="Personal Website" class="rounded-xl mt-6 w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+        <p class="text-gray-700 mt-4 text-lg font-medium">Starting at <span class="text-blue-700 font-bold">Ksh 15,500</span></p>
+        <a href="https://wa.me/254715465265" target="_blank" class="inline-block mt-6 bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition-all duration-300 hover:scale-105 shadow-md">Learn More</a>
       </div>
   
-      <div class="grid md:grid-cols-3 gap-8 px-10 mt-10">
-          <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
-              <i class="fas fa-mouse-pointer text-red-500 text-5xl"></i>
-              <h3 class="text-2xl font-semibold mt-3">Unlimited Visibility</h3>
-              <p class="text-gray-600 mt-2">Maintain a 24/7 online presence to attract new and returning clients.</p>
-          </div>
-  
-          <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
-              <i class="fas fa-headset text-yellow-500 text-5xl"></i>
-              <h3 class="text-2xl font-semibold mt-3">Continuous Support</h3>
-              <p class="text-gray-600 mt-2">Our dedicated team is here to address all your questions and concerns.</p>
-          </div>
-  
-          <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
-              <i class="fas fa-chart-line text-indigo-500 text-5xl"></i>
-              <h3 class="text-2xl font-semibold mt-3">95%+ Customer Satisfaction</h3>
-              <p class="text-gray-600 mt-2">We guarantee satisfaction when creating your website.</p>
-          </div>
+      <!-- Business Website -->
+      <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 p-8 border-t-8 border-indigo-500">
+        <div class="flex justify-center mb-4">
+          <i class="fas fa-briefcase text-indigo-600 text-5xl group-hover:scale-110 transition-transform duration-500"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-indigo-900 group-hover:text-indigo-600 transition-colors duration-300">Business Website</h3>
+        <img src="Images/busines web.jpg" alt="Business Website" class="rounded-xl mt-6 w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+        <p class="text-gray-700 mt-4 text-lg font-medium">Starting at <span class="text-indigo-700 font-bold">Ksh 25,000</span></p>
+        <a href="https://wa.me/254715465265" target="_blank" class="inline-block mt-6 bg-indigo-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-indigo-700 transition-all duration-300 hover:scale-105 shadow-md">Learn More</a>
       </div>
+  
+      <!-- eCommerce Website -->
+      <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 p-8 border-t-8 border-purple-500">
+        <div class="flex justify-center mb-4">
+          <i class="fas fa-shopping-cart text-purple-600 text-5xl group-hover:scale-110 transition-transform duration-500"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-purple-900 group-hover:text-purple-600 transition-colors duration-300">eCommerce Website</h3>
+        <img src="Images/ecomweb.jpg" alt="eCommerce Website" class="rounded-xl mt-6 w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+        <p class="text-gray-700 mt-4 text-lg font-medium">Starting at <span class="text-purple-700 font-bold">Ksh 42,000</span></p>
+        <a href="https://wa.me/254715465265" target="_blank" class="inline-block mt-6 bg-purple-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-purple-700 transition-all duration-300 hover:scale-105 shadow-md">Learn More</a>
+      </div>
+  
+      <!-- Portfolio Website -->
+      <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 p-8 border-t-8 border-pink-500">
+        <div class="flex justify-center mb-4">
+          <i class="fas fa-camera text-pink-600 text-5xl group-hover:scale-110 transition-transform duration-500"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-pink-900 group-hover:text-pink-600 transition-colors duration-300">Portfolio Website</h3>
+        <img src="Images/portfolio.jpg" alt="Portfolio Website" class="rounded-xl mt-6 w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+        <p class="text-gray-700 mt-4 text-lg font-medium">Starting at <span class="text-pink-700 font-bold">Ksh 20,000</span></p>
+        <a href="https://wa.me/254715465265" target="_blank" class="inline-block mt-6 bg-pink-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-pink-700 transition-all duration-300 hover:scale-105 shadow-md">Learn More</a>
+      </div>
+  
+      <!-- NGO Website -->
+      <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 p-8 border-t-8 border-green-500">
+        <div class="flex justify-center mb-4">
+          <i class="fas fa-hand-holding-heart text-green-600 text-5xl group-hover:scale-110 transition-transform duration-500"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-green-900 group-hover:text-green-600 transition-colors duration-300">NGO Website</h3>
+        <img src="Images/ngo.jpg" alt="NGO Website" class="rounded-xl mt-6 w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+        <p class="text-gray-700 mt-4 text-lg font-medium">Starting at <span class="text-green-700 font-bold">Ksh 22,000</span></p>
+        <a href="https://wa.me/254715465265" target="_blank" class="inline-block mt-6 bg-green-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-green-700 transition-all duration-300 hover:scale-105 shadow-md">Learn More</a>
+      </div>
+  
+      <!-- Educational Website -->
+      <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 p-8 border-t-8 border-yellow-500">
+        <div class="flex justify-center mb-4">
+          <i class="fas fa-graduation-cap text-yellow-600 text-5xl group-hover:scale-110 transition-transform duration-500"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-yellow-900 group-hover:text-yellow-600 transition-colors duration-300">Educational Website</h3>
+        <img src="Images/education.jpg" alt="Educational Website" class="rounded-xl mt-6 w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+        <p class="text-gray-700 mt-4 text-lg font-medium">Starting at <span class="text-yellow-700 font-bold">Ksh 27,000</span></p>
+        <a href="https://wa.me/254715465265" target="_blank" class="inline-block mt-6 bg-yellow-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-yellow-700 transition-all duration-300 hover:scale-105 shadow-md">Learn More</a>
+      </div>
+    </div>
   </section>
+  
+  <!-- Font Awesome (add this if icons not showing) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  
+      
+
+
+  <section class="guarantees py-20 bg-gradient-to-b from-blue-50 to-gray-100 text-center">
+    <h2 class="text-5xl font-extrabold text-gray-800 tracking-tight mb-4">
+      What We Guarantee
+    </h2>
+    <p class="text-lg text-gray-600 mb-12">
+      This is what you'll achieve with our professional web design services.
+    </p>
+  
+    <!-- Guarantee Cards Grid -->
+    <div class="grid md:grid-cols-3 gap-10 px-8">
+      <div class="bg-white p-8 rounded-2xl shadow-xl flex flex-col items-center transition-transform transform hover:scale-105 hover:shadow-2xl">
+        <i class="fas fa-desktop text-blue-600 text-6xl mb-4"></i>
+        <h3 class="text-2xl font-semibold text-gray-800 mb-2">Your Own Website</h3>
+        <p class="text-gray-600">A stunningly designed website that meets all technical standards.</p>
+      </div>
+  
+      <div class="bg-white p-8 rounded-2xl shadow-xl flex flex-col items-center transition-transform transform hover:scale-105 hover:shadow-2xl">
+        <i class="fas fa-database text-green-600 text-6xl mb-4"></i>
+        <h3 class="text-2xl font-semibold text-gray-800 mb-2">Exceptional Hosting</h3>
+        <p class="text-gray-600">Lightning-fast and high-performance hosting for your site.</p>
+      </div>
+  
+      <div class="bg-white p-8 rounded-2xl shadow-xl flex flex-col items-center transition-transform transform hover:scale-105 hover:shadow-2xl">
+        <i class="fas fa-search text-purple-600 text-6xl mb-4"></i>
+        <h3 class="text-2xl font-semibold text-gray-800 mb-2">Domain Name</h3>
+        <p class="text-gray-600">Get a custom domain name for your business, complete with all the benefits.</p>
+      </div>
+    </div>
+  
+    <div class="grid md:grid-cols-3 gap-10 px-8 mt-12">
+      <div class="bg-white p-8 rounded-2xl shadow-xl flex flex-col items-center transition-transform transform hover:scale-105 hover:shadow-2xl">
+        <i class="fas fa-mouse-pointer text-red-500 text-6xl mb-4"></i>
+        <h3 class="text-2xl font-semibold text-gray-800 mb-2">Unlimited Visibility</h3>
+        <p class="text-gray-600">Maintain a 24/7 online presence to attract new and returning clients.</p>
+      </div>
+  
+      <div class="bg-white p-8 rounded-2xl shadow-xl flex flex-col items-center transition-transform transform hover:scale-105 hover:shadow-2xl">
+        <i class="fas fa-headset text-yellow-500 text-6xl mb-4"></i>
+        <h3 class="text-2xl font-semibold text-gray-800 mb-2">Continuous Support</h3>
+        <p class="text-gray-600">Our dedicated team is here to address all your questions and concerns.</p>
+      </div>
+  
+      <div class="bg-white p-8 rounded-2xl shadow-xl flex flex-col items-center transition-transform transform hover:scale-105 hover:shadow-2xl">
+        <i class="fas fa-chart-line text-indigo-600 text-6xl mb-4"></i>
+        <h3 class="text-2xl font-semibold text-gray-800 mb-2">95%+ Customer Satisfaction</h3>
+        <p class="text-gray-600">We guarantee satisfaction when creating your website.</p>
+      </div>
+    </div>
+  </section>
+  
 
     <!-- Contact Section -->
-    <section class="text-center py-20 bg-gray-800 text-white">
-        <h2 class="text-4xl font-bold ">Need Our Help?</h2>
-        <p class="text-lg ">We will help you make the best decision for your business.</p>
-        <a href="https://wa.me/254715465265" target="_blank" class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300">
-            WhatsApp Us
-        </a>
-    </section>
+    <section class="text-center py-24 bg-gradient-to-r from-blue-900 via-indigo-800 to-gray-900 text-white relative overflow-hidden">
+        <!-- Animated glow background -->
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10 animate-pulse"></div>
+      
+        <div class="relative z-10">
+          <h2 class="text-5xl font-extrabold mb-4 tracking-tight">
+            Let’s Bring Your Vision to Life
+          </h2>
+          <p class="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+            Whether you’re starting from scratch or need a redesign, our creative team will craft a website that makes your brand unforgettable.
+          </p>
+      
+          <a href="https://wa.me/254715465265" target="_blank"
+            class="inline-block bg-green-500 text-white text-lg font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-2xl hover:scale-105 hover:bg-green-600 transition-all duration-300">
+            <i class="fab fa-whatsapp mr-2 text-2xl align-middle"></i> Chat With Us on WhatsApp
+          </a>
+      
+          <!-- Decorative glow line -->
+          <div class="mt-10 flex justify-center">
+            <div class="h-1 w-40 bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 rounded-full animate-pulse"></div>
+          </div>
+      
+          <p class="mt-6 text-gray-400 italic">
+            Quick response • Expert guidance • Free consultation
+          </p>
+        </div>
+      </section>
+      
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-16">
-        <div class="container mx-auto grid md:grid-cols-4 gap-10 px-10">
-
-            <div>
-                <img src="Images/mine-logo.jpeg" alt="Mine Logo" class="w-20 mb-4">
-                <p>Mine is a Kenyan web design company specializing in web design, graphic design, digital marketing, and web hosting.</p>
-                <ul class="social-icons flex space-x-4 mt-4">
-                  <li><a href="#" class="text-white text-xl hover:text-blue-400"><i class="fab fa-facebook-f"></i></a></li>
-                  <li><a href="#" class="text-white text-xl hover:text-blue-400"><i class="fab fa-twitter"></i></a></li>
-                  <li><a href="#" class="text-white text-xl hover:text-pink-400"><i class="fab fa-instagram"></i></a></li>
-                  <li><a href="#" class="text-white text-xl hover:text-blue-400"><i class="fab fa-linkedin-in"></i></a></li>
-                  <li><a href="#" class="text-white text-xl hover:text-red-400"><i class="fab fa-google-plus-g"></i></a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h3 class="text-white text-xl font-semibold mb-3">Navigation</h3>
-                <ul>
-                    <li><a href="#" class="hover:text-white">Home</a></li>
-                    <li><a href="#" class="hover:text-white">About</a></li>
-                    <li><a href="#" class="hover:text-white">Our Blog</a></li>
-                    <li><a href="#" class="hover:text-white">Contact</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h3 class="text-white text-xl font-semibold mb-3">Useful Links</h3>
-                <ul>
-                    <li><a href="#" class="hover:text-white">Logo Design</a></li>
-                    <li><a href="#" class="hover:text-white">Web Design</a></li>
-                    <li><a href="#" class="hover:text-white">Digital Marketing</a></li>
-                    <li><a href="#" class="hover:text-white">Full Branding</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h3 class="text-white text-xl font-semibold mb-3">Contact Us</h3>
-                <ul>
-                    <li>0715 465 265 or 0746 767 896</li>
-                    <li><a href="mailto:theeron13@gmail.com" class="hover:text-white">theeron13@gmail.com</a></li>
-                </ul>
-            </div>
+    <footer
+    class="relative bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-gray-300 py-16 sm:py-20 lg:py-24">
+    <div
+      class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between px-4 sm:px-10 md:px-16 lg:px-20 gap-8 md:gap-16 lg:gap-24">
+      <!-- Logo & About -->
+      <div class="md:w-1/3 text-center md:text-left">
+        <div class="relative flex justify-center md:justify-start mb-6">
+          <div class="absolute -inset-1 bg-blue-500/20 blur-lg rounded-lg"></div>
+          <img src="Images/logo.jpg" alt="Mine Logo"
+            class="relative w-20 md:w-20 rounded-lg shadow-xl ring-2 ring-blue-500/50" />
         </div>
-    </footer>
+        <p class="leading-relaxed text-gray-300 mt-2 text-base text-sm sm:text-lg">
+          <span class="text-white font-semibold">WebNest Ke</span> is a Kenyan
+          web design company specializing in
+          <span class="text-blue-400">web design</span>,
+          <span class="text-green-400">graphic design</span>,
+          <span class="text-yellow-400">digital marketing</span>, and
+          <span class="text-pink-400">web hosting</span>.
+        </p>
+      </div>
 
-    <!-- JavaScript -->
-    <script>
-        // Navbar Scroll Effect
-        window.addEventListener("scroll", function () {
-            let nav = document.querySelector("nav");
-            nav.classList.toggle("nav-active", window.scrollY > 50);
-        });
+      <!-- Navigation -->
+      <div class="md:w-1/4 text-center md:text-left">
+        <h3 class="text-xl font-semibold text-white mb-5 border-b-2 border-blue-500 pb-1 inline-block">
+          Navigation
+        </h3>
+        <ul class="space-y-3">
+          <li>
+            <a href="index.html" class="hover:text-blue-400 transition-all">Home</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-blue-400 transition-all">About</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-blue-400 transition-all">Our Blog</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-blue-400 transition-all">Contact</a>
+          </li>
+        </ul>
+      </div>
 
-        // GSAP Animations
-        document.addEventListener("DOMContentLoaded", function () {
-            gsap.from("h2, p, .packages div, .contact-section a, footer div", {
-                opacity: 0,
-                y: 30,
-                duration: 0.5,
-                stagger: 0.2,
-                delay: 0.3,
-                ease: "power3.out"
-            });
+      <!-- Useful Links -->
+      <div class="md:w-1/4 text-center md:text-left">
+        <h3 class="text-xl font-semibold text-white mb-5 border-b-2 border-green-500 pb-1 inline-block">
+          Useful Links
+        </h3>
+        <ul class="space-y-3">
+            <li>
+              <a href="brand.html" class="hover:text-green-400 transition-all">Logo Design</a>
+            </li>
+            <li>
+              <a href="web.html" class="hover:text-green-400 transition-all">Web Design</a>
+            </li>
+            <li>
+              <a href="marketing.html" class="hover:text-green-400 transition-all">Digital Marketing</a>
+            </li>
+            <li>
+              <a href="brand.html" class="hover:text-green-400 transition-all">Full Branding</a>
+            </li>
+          </ul>
+      </div>
 
-            gsap.from(".guarantees h2, .guarantees p, .guarantees .grid div", {
-            opacity: 0,
-            y: 30,
-            duration: 0.5,
-            stagger: 0.2,
-            delay: 0.3,
-            ease: "power3.out"
-        });
-        });
-    </script>
+      <!-- Contact -->
+      <div class="md:w-1/4 text-center md:text-left">
+        <h3 class="text-xl font-semibold text-white mb-5 border-b-2 border-pink-500 pb-1 inline-block">
+          Contact Us
+        </h3>
+        <ul class="space-y-3 text-gray-300">
+          <li class="text-lg flex justify-center md:justify-start items-center gap-3">
+            <i class="fas fa-phone-alt text-blue-400"></i> 0715465265 /
+            0746767896
+          </li>
+          <li class="flex justify-center md:justify-start">
+            <a href="mailto:theeron13@gmail.com" class="flex items-center gap-3 hover:text-blue-400 transition-all">
+              <i class="fas fa-envelope text-blue-400"></i>
+              theeron13@gmail.com
+            </a>
+          </li>
+        </ul>
+
+        <!-- Social Icons -->
+        <ul class="flex justify-center md:justify-start space-x-6 mt-8">
+          <li>
+            <a href="#"
+              class="text-2xl text-gray-300 hover:text-blue-400 hover:drop-shadow-[0_0_10px_#3b82f6] transition-all duration-300"><i
+                class="fab fa-facebook-f"></i></a>
+          </li>
+          <li>
+            <a href="#"
+              class="text-2xl text-gray-300 hover:text-sky-400 hover:drop-shadow-[0_0_10px_#38bdf8] transition-all duration-300"><i
+                class="fab fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"
+              class="text-2xl text-gray-300 hover:text-pink-400 hover:drop-shadow-[0_0_10px_#ec4899] transition-all duration-300"><i
+                class="fab fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"
+              class="text-2xl text-gray-300 hover:text-blue-500 hover:drop-shadow-[0_0_10px_#3b82f6] transition-all duration-300"><i
+                class="fab fa-linkedin-in"></i></a>
+          </li>
+          <li>
+            <a href="#"
+              class="text-2xl text-gray-300 hover:text-red-500 hover:drop-shadow-[0_0_10px_#ef4444] transition-all duration-300"><i
+                class="fab fa-google-plus-g"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
 
 </body>
 </html>

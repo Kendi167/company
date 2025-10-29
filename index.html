@@ -1,429 +1,610 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>MINE</title>
-    <link rel="stylesheet" href="styles.css" />
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Font Awesome for Icons -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      rel="stylesheet"
-    />
+<head>
+  <title>MINE</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- GSAP for Animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  </head>
-  <body class="bg-gray-300">
-    <nav
-      class="bg-white shadow-lg fixed w-full top-0 z-50 transition-all duration-300"
-    >
-      <div class="container mx-auto flex justify-between items-center p-4">
-        <a href="index.html" class="flex items-center">
-          <img
-            src="Images/mine-logo.jpeg"
-            alt="Mine Logo"
-            class="h-12 w-12 rounded-full"
-          />
-          <span class="text-xl font-semibold ml-2">Linda Company</span>
-        </a>
-        <ul class="hidden md:flex space-x-6">
-          <li>
-            <a href="web.html" class="hover:text-blue-500 transition"
-              >Web Design</a
-            >
-          </li>
-          <li>
-            <a href="marketing.html" class="hover:text-blue-500 transition"
-              >Digital Marketing</a
-            >
-          </li>
-          <li>
-            <a href="brand.html" class="hover:text-blue-500 transition"
-              >Full Branding</a
-            >
-          </li>
-          <li>
-            <a href="#" class="hover:text-blue-500 transition">Our Work</a>
-          </li>
-        </ul>
-        <a
-          href="#"
-          class="bg-blue-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-blue-600 transition"
-          >Get Quote</a
-        >
-        <button id="menu-button" class="md:hidden text-gray-700 hover:text-blue-500 focus:outline-none">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-      </button>
+  <!-- Font Awesome for Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
 
-  </div>
+  <!-- GSAP for Animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
 
-  <div id="mobile-menu" class="hidden md:hidden bg-white">
-      <ul class="flex flex-col p-4 space-y-4">
-          <li><a href="web.html" class="hover:text-blue-500 transition">Web Design</a></li>
-          <li><a href="marketing.html" class="hover:text-blue-500 transition">Digital Marketing</a></li>
-          <li><a href="brand.html" class="hover:text-blue-500 transition">Full Branding</a></li>
-          <li><a href="#" class="hover:text-blue-500 transition">Our Work</a></li>
-          <li><a href="#" class="bg-blue-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-blue-600 transition">Get Quote</a></li>
+<body class="bg-gray-300">
+  <nav class="fixed w-full top-0 z-50 bg-white/70 backdrop-blur-md shadow-md transition-all duration-300">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center group">
+        <img src="Images/logo.jpg" alt="Mine Logo"
+          class="h-12 w-12 rounded-full border-2 border-blue-500 group-hover:scale-110 transition-transform duration-300" />
+        <span
+          class="text-2xl font-extrabold ml-3 bg-gradient-to-r from-blue-500 to-indigo-600 bg-clip-text text-transparent">WebNest
+          Ke.</span>
+      </a>
+
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex items-center space-x-8 text-gray-800 font-medium">
+        <li>
+          <a href="web.html" class="relative group hover:text-blue-600 transition duration-300">
+            Web Design
+            <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full"></span>
+          </a>
+        </li>
+        <li>
+          <a href="marketing.html" class="relative group hover:text-blue-600 transition duration-300">
+            Digital Marketing
+            <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full"></span>
+          </a>
+        </li>
+        <li>
+          <a href="brand.html" class="relative group hover:text-blue-600 transition duration-300">
+            Full Branding
+            <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="relative group hover:text-blue-600 transition duration-300">
+            Our Work
+            <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full"></span>
+          </a>
+        </li>
       </ul>
-  </div>
-    </nav>
 
-    <section
-      class="mt-20 flex flex-col md:flex-row items-center justify-center text-center md:text-left p-10"
-    >
-      <div class="md:w-1/2">
-        <h1 class="text-4xl font-bold text-gray-800 mb-4">
-          We Build Modern Websites
-        </h1>
-        <p class="text-gray-600">
-          We will create a website that will elevate your brand and make your
-          customers return to you.
-        </p>
-      </div>
-      <div class="md:w-1/2">
-        <img
-          src="Images/hero.jpg"
-          alt="Modern Website"
-          class="w-full rounded-lg shadow-lg"
-        />
-      </div>
-    </section>
+      <!-- CTA Button -->
+      <a href="#"
+        class="hidden md:inline-block bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-5 py-2 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transform transition-all duration-300">
+        Get Quote
+      </a>
 
-    <!-- Services -->
-    <section class="py-20 bg-white">
-      <div class="text-center mb-10">
-        <h2 class="text-3xl font-bold text-gray-800">Our Top Services</h2>
-        <p class="text-gray-600">
-          The following are some of our top services that will help you
-          kickstart your business online.
-        </p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-        <div
-          class="p-6 bg-gray-100 rounded-lg shadow-lg transform hover:scale-105 transition duration-300"
-        >
-          <h3 class="text-xl font-semibold">Website Design</h3>
-          <p>Build your brand online</p>
-          <a href="web.html">
-            <img
-              src="Images/Website-Design.jpg"
-              alt="Website Design"
-              class="w-full h-40 object-cover rounded-lg mt-4"
-            />
-          </a>
-        </div>
-        <div
-          class="p-6 bg-gray-100 rounded-lg shadow-lg transform hover:scale-105 transition duration-300"
-        >
-          <h3 class="text-xl font-semibold">Logo & Branding</h3>
-          <p>Create a lasting impression</p>
-          <a href="brand.html">
-            <img
-              src="Images/branding.png"
-              alt="Logo & Branding"
-              class="w-full h-40 object-cover rounded-lg mt-4"
-            />
-          </a>
-        </div>
-        <div
-          class="p-6 bg-gray-100 rounded-lg shadow-lg transform hover:scale-105 transition duration-300"
-        >
-          <h3 class="text-xl font-semibold">Digital Marketing</h3>
-          <p>Get a reliable digital marketing package</p>
-          <a href="brand.html">
-            <img
-              src="Images/hero1.jpg"
-              alt="Digital Marketing"
-              class="w-full h-40 object-cover rounded-lg mt-4"
-            />
-          </a>
-        </div>
-      </div>
-    </section>
+      <!-- Mobile Menu Button -->
+      <button id="menu-button" class="md:hidden text-gray-700 hover:text-blue-600 focus:outline-none">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
 
-    <section class="hosting-plans mt-20 p-10 text-center">
-      <h2 class="text-5xl font-bold text-gray-800 mb-6">
-        Choose Hosting Plan for Your Needs
-      </h2>
-      <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
-        Mine provides premium website & fastest hosting in Kenya, along with our
-        web development and administration services.
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white/90 backdrop-blur-md shadow-lg border-t border-gray-200">
+      <ul class="flex flex-col p-4 space-y-4 text-gray-700 font-medium">
+        <li>
+          <a href="web.html" class="hover:text-blue-600 transition">Web Design</a>
+        </li>
+        <li>
+          <a href="marketing.html" class="hover:text-blue-600 transition">Digital Marketing</a>
+        </li>
+        <li>
+          <a href="brand.html" class="hover:text-blue-600 transition">Full Branding</a>
+        </li>
+        <li>
+          <a href="#" class="hover:text-blue-600 transition">Our Work</a>
+        </li>
+        <li>
+          <a href="#"
+            class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 rounded-full text-center shadow-md hover:shadow-xl transition-all">Get
+            Quote</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <section
+    class="mt-24 flex flex-col-reverse md:flex-row items-center justify-center gap-10 px-6 md:px-16 py-10 bg-gradient-to-r from-blue-50 via-white to-indigo-50">
+    <!-- Text Section -->
+    <div class="md:w-1/2 text-center items-center md:text-left space-y-6">
+      <h1 class="text-5xl md:text-6xl font-extrabold leading-tight text-gray-900">
+        We Build
+        <span class="bg-gradient-to-r from-blue-500 to-indigo-600 bg-clip-text text-transparent">
+          Modern Websites
+        </span>
+      </h1>
+
+      <p class="text-lg text-gray-600 max-w-md mx-auto md:mx-0">
+        Transform your online presence with a stunning, fast, and fully
+        responsive website designed to make your brand unforgettable.
       </p>
 
-      <div class="plan-cards flex flex-col md:flex-row justify-center gap-10">
-        <!-- Silver Plan -->
+      <div class="flex justify-center md:justify-start space-x-4 pt-4">
+        <a href="#"
+          class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transform transition-all duration-300">Get
+          Started</a>
+        <a href="#"
+          class="border border-blue-500 text-blue-600 px-6 py-3 rounded-full hover:bg-blue-500 hover:text-white transition-all duration-300">View
+          Our Work</a>
+      </div>
+    </div>
+
+    <!-- Image Section -->
+    <div class="md:w-1/2 relative group">
+      <img src="Images/hero.jpg" alt="Modern Website"
+        class="w-full rounded-2xl shadow-2xl transform group-hover:scale-105 transition-all duration-500" />
+
+      <!-- Floating gradient blur for modern effect -->
+      <div class="absolute -bottom-8 -left-8 w-40 h-40 bg-blue-500/30 rounded-full blur-3xl"></div>
+      <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-400/30 rounded-full blur-3xl"></div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-20 bg-gradient-to-b from-white via-blue-50 to-indigo-50">
+    <div class="text-center mb-14">
+      <h2 class="text-4xl font-extrabold bg-gradient-to-r from-blue-500 to-indigo-600 bg-clip-text text-transparent">
+        Our Top Services
+      </h2>
+      <p class="text-gray-600 mt-3 max-w-2xl mx-auto">
+        We craft solutions that elevate your brand and drive real results
+        online.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto px-6">
+      <!-- Service Card 1 -->
+      <div
+        class="group relative p-6 bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
         <div
-          class="plan-card flex-1 bg-white p-10 rounded-xl shadow-2xl transform scale-100 hover:scale-105 transition-all duration-300"
-        >
-          <h3 class="plan-name text-3xl font-bold text-gray-800 mb-6">
-            Silver
-          </h3>
-          <ul class="plan-features space-y-3 text-lg text-gray-600">
-            <li>✅ Single Domain</li>
-            <li>✅ 10GB Disk Space</li>
-            <li>✅ 25 Professional Emails</li>
-            <li>✅ 1 GB RAM</li>
-            <li>✅ Full Cpanel Access</li>
-            <li>✅ 100GB Monthly Bandwidth</li>
-            <li>✅ Automatic Backups</li>
-            <li>✅ SSL Certificate</li>
-          </ul>
-          <div class="plan-price mt-6 text-3xl font-bold text-green-600">
-            Ksh 2350 <span class="text-lg text-gray-500">/Year</span>
-          </div>
-          <a
-            href="#"
-            class="btn mt-8 block text-center bg-blue-600 text-white py-3 px-6 rounded-lg text-xl hover:bg-blue-700 transition-all"
-            >Order Now</a
-          >
+          class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition duration-500">
         </div>
 
-        <!-- Gold Plan -->
-        <div
-          class="plan-card flex-1 bg-white p-10 rounded-xl shadow-2xl transform scale-100 hover:scale-105 transition-all duration-300"
-        >
-          <h3 class="plan-name text-3xl font-bold text-gray-800 mb-6">Gold</h3>
-          <ul class="plan-features space-y-3 text-lg text-gray-600">
-            <li>✅ 3 Domain Hosting</li>
-            <li>✅ 40GB Disk Space</li>
-            <li>✅ 50 Professional Emails</li>
-            <li>✅ 2 GB RAM</li>
-            <li>✅ Full Cpanel Access</li>
-            <li>✅ 400GB Monthly Bandwidth</li>
-            <li>✅ Automatic Backups</li>
-            <li>✅ SSL Certificate</li>
-          </ul>
-          <div class="plan-price mt-6 text-3xl font-bold text-green-600">
-            Ksh 4100 <span class="text-lg text-gray-500">/Year</span>
+        <div class="relative z-10 text-center">
+          <div
+            class="mx-auto mb-4 w-16 h-16 bg-blue-100 text-blue-600 flex items-center justify-center rounded-full group-hover:scale-110 transition duration-300">
+            <i class="fa-solid fa-code text-2xl"></i>
           </div>
-          <a
-            href="#"
-            class="btn mt-8 block text-center bg-blue-600 text-white py-3 px-6 rounded-lg text-xl hover:bg-blue-700 transition-all"
-            >Order Now</a
-          >
+
+          <h3 class="text-xl font-semibold text-gray-800 mt-2">
+            Website Design
+          </h3>
+          <p class="text-gray-600 mt-2">
+            Build your brand online with a modern, responsive website.
+          </p>
+          <a href="web.html">
+            <img src="Images/Website-Design.jpg" alt="Website Design"
+              class="w-full h-44 object-cover rounded-lg mt-6 shadow-md group-hover:shadow-lg transition duration-500" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Service Card 2 -->
+      <div
+        class="group relative p-6 bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-blue-400/10 opacity-0 group-hover:opacity-100 transition duration-500">
+        </div>
+
+        <div class="relative z-10 text-center">
+          <div
+            class="mx-auto mb-4 w-16 h-16 bg-indigo-100 text-indigo-600 flex items-center justify-center rounded-full group-hover:scale-110 transition duration-300">
+            <i class="fa-solid fa-pen-nib text-2xl"></i>
+          </div>
+
+          <h3 class="text-xl font-semibold text-gray-800 mt-2">
+            Logo & Branding
+          </h3>
+          <p class="text-gray-600 mt-2">
+            Create a lasting impression with a powerful brand identity.
+          </p>
+          <a href="brand.html">
+            <img src="Images/branding.png" alt="Logo & Branding"
+              class="w-full h-44 object-cover rounded-lg mt-6 shadow-md group-hover:shadow-lg transition duration-500" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Service Card 3 -->
+      <div
+        class="group relative p-6 bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-500/10 opacity-0 group-hover:opacity-100 transition duration-500">
+        </div>
+
+        <div class="relative z-10 text-center">
+          <div
+            class="mx-auto mb-4 w-16 h-16 bg-purple-100 text-purple-600 flex items-center justify-center rounded-full group-hover:scale-110 transition duration-300">
+            <i class="fa-solid fa-bullhorn text-2xl"></i>
+          </div>
+
+          <h3 class="text-xl font-semibold text-gray-800 mt-2">
+            Digital Marketing
+          </h3>
+          <p class="text-gray-600 mt-2">
+            Boost visibility and conversions with powerful online marketing.
+          </p>
+          <a href="marketing.html">
+            <img src="Images/hero1.jpg" alt="Digital Marketing"
+              class="w-full h-44 object-cover rounded-lg mt-6 shadow-md group-hover:shadow-lg transition duration-500" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Include AOS for scroll animations -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+
+  <!-- HOSTING PLANS SECTION -->
+  <section
+    class="hosting-plans mt-20 relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-blue-100 p-10 text-center">
+    <!-- Optional video background -->
+    <!--
+<video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-20">
+  <source src="your-video.mp4" type="video/mp4">
+</video>
+-->
+
+    <div class="relative z-10">
+      <h2 data-aos="fade-up" class="text-5xl font-bold text-gray-800 mb-6 drop-shadow-md">
+        Choose Hosting Plan for Your Needs
+      </h2>
+      <p data-aos="fade-up" data-aos-delay="100" class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
+        Mine provides premium website & fastest hosting in Kenya, along with
+        our web development and administration services.
+      </p>
+
+      <!-- PLAN CARDS -->
+      <div class="plan-cards flex flex-col md:flex-row justify-center gap-10 relative z-10">
+        <!-- Silver Plan -->
+        <div data-aos="zoom-in" data-aos-delay="100"
+          class="plan-card flex-1 bg-white p-10 rounded-xl shadow-2xl hover:shadow-[0_0_25px_rgba(59,130,246,0.4)] transform hover:scale-105 transition-all duration-300">
+          <h3 class="text-3xl font-bold text-gray-800 mb-6">Silver</h3>
+          <ul class="space-y-3 text-lg text-gray-600 text-left">
+            <li class="flex items-center gap-2">
+              ✅ <span>Single Domain</span>
+            </li>
+            <li class="flex items-center gap-2">
+              ✅ <span>10GB Disk Space</span>
+            </li>
+            <li class="flex items-center gap-2">
+              ✅ <span>25 Professional Emails</span>
+            </li>
+            <li class="flex items-center gap-2">✅ <span>1 GB RAM</span></li>
+            <li class="flex items-center gap-2">
+              ✅ <span>Full Cpanel Access</span>
+            </li>
+            <li class="flex items-center gap-2">
+              ✅ <span>100GB Monthly Bandwidth</span>
+            </li>
+            <li class="flex items-center gap-2">
+              ✅ <span>Automatic Backups</span>
+            </li>
+            <li class="flex items-center gap-2">
+              ✅ <span>SSL Certificate</span>
+            </li>
+          </ul>
+          <div class="mt-6 text-3xl font-bold text-green-600">
+            Ksh 2350 <span class="text-lg text-gray-500">/Year</span>
+          </div>
+          <a href="#"
+            class="mt-8 block text-center bg-blue-600 text-white py-3 px-6 rounded-lg text-xl hover:bg-blue-700 transition-all">Order
+            Now</a>
+        </div>
+
+        <!-- Gold Plan (Highlighted) -->
+        <div data-aos="zoom-in" data-aos-delay="200"
+          class="plan-card flex-1 bg-blue-600 text-white p-10 rounded-xl shadow-2xl border-4 border-yellow-400 transform scale-105 hover:scale-110 transition-all duration-300 relative">
+          <span class="bg-yellow-400 text-gray-900 px-3 py-1 text-sm font-semibold rounded-full mb-4 inline-block">Most
+            Popular</span>
+          <h3 class="text-3xl font-bold mb-6">Gold</h3>
+          <ul class="space-y-3 text-lg text-left">
+            <li class="flex items-center gap-2">⭐ 3 Domain Hosting</li>
+            <li class="flex items-center gap-2">⭐ 40GB Disk Space</li>
+            <li class="flex items-center gap-2">⭐ 50 Professional Emails</li>
+            <li class="flex items-center gap-2">⭐ 2 GB RAM</li>
+            <li class="flex items-center gap-2">⭐ Full Cpanel Access</li>
+            <li class="flex items-center gap-2">
+              ⭐ 400GB Monthly Bandwidth
+            </li>
+            <li class="flex items-center gap-2">⭐ Automatic Backups</li>
+            <li class="flex items-center gap-2">⭐ SSL Certificate</li>
+          </ul>
+          <div class="mt-6 text-3xl font-bold text-yellow-300">
+            Ksh 4100 <span class="text-lg text-yellow-200">/Year</span>
+          </div>
+          <a href="#"
+            class="mt-8 block text-center bg-yellow-400 text-gray-900 py-3 px-6 rounded-lg text-xl font-semibold hover:bg-yellow-300 transition-all">Order
+            Now</a>
         </div>
 
         <!-- Platinum Plan -->
-        <div
-          class="plan-card flex-1 bg-white p-10 rounded-xl shadow-2xl transform scale-100 hover:scale-105 transition-all duration-300"
-        >
-          <h3 class="plan-name text-3xl font-bold text-gray-800 mb-6">
-            Platinum
-          </h3>
-          <ul class="plan-features space-y-3 text-lg text-gray-600">
-            <li>✅ 10 Domains</li>
-            <li>✅ 70GB Disk Space</li>
-            <li>✅ Unlimited Emails</li>
-            <li>✅ 4GB RAM</li>
-            <li>✅ Full Cpanel Access</li>
-            <li>✅ Unlimited Monthly Bandwidth</li>
-            <li>✅ Automatic Backups</li>
-            <li>✅ SSL Certificate</li>
+        <div data-aos="zoom-in" data-aos-delay="300"
+          class="plan-card flex-1 bg-white p-10 rounded-xl shadow-2xl hover:shadow-[0_0_25px_rgba(59,130,246,0.4)] transform hover:scale-105 transition-all duration-300">
+          <h3 class="text-3xl font-bold text-gray-800 mb-6">Platinum</h3>
+          <ul class="space-y-3 text-lg text-gray-600 text-left">
+            <li class="flex items-center gap-2">✅ 10 Domains</li>
+            <li class="flex items-center gap-2">✅ 70GB Disk Space</li>
+            <li class="flex items-center gap-2">✅ Unlimited Emails</li>
+            <li class="flex items-center gap-2">✅ 4GB RAM</li>
+            <li class="flex items-center gap-2">✅ Full Cpanel Access</li>
+            <li class="flex items-center gap-2">
+              ✅ Unlimited Monthly Bandwidth
+            </li>
+            <li class="flex items-center gap-2">✅ Automatic Backups</li>
+            <li class="flex items-center gap-2">✅ SSL Certificate</li>
           </ul>
-          <div class="plan-price mt-6 text-3xl font-bold text-green-600">
+          <div class="mt-6 text-3xl font-bold text-green-600">
             Ksh 5970 <span class="text-lg text-gray-500">/Year</span>
           </div>
-          <a
-            href="#"
-            class="btn mt-8 block text-center bg-blue-600 text-white py-3 px-6 rounded-lg text-xl hover:bg-blue-700 transition-all"
-            >Order Now</a
-          >
+          <a href="#"
+            class="mt-8 block text-center bg-blue-600 text-white py-3 px-6 rounded-lg text-xl hover:bg-blue-700 transition-all">Order
+            Now</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="guarantees mt-20 p-10 text-center">
-      <h2 class="text-5xl font-bold text-gray-800 mb-8">What We Guarantee</h2>
+  <section
+    class="guarantees relative mt-20 p-10 text-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-blue-100">
+    <!-- Optional animated background -->
+    <!--
+<video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-15">
+  <source src="your-video.mp4" type="video/mp4">
+</video>
+-->
 
-      <div
-        class="guarantee-cards flex flex-col md:flex-row justify-center gap-10"
-      >
+    <div class="relative z-10">
+      <h2 data-aos="fade-up" class="text-5xl font-extrabold text-gray-800 mb-8 tracking-tight drop-shadow-sm">
+        What We Guarantee
+      </h2>
+
+      <div class="guarantee-cards flex flex-col md:flex-row flex-wrap justify-center gap-10 mt-10">
         <!-- Card 1 -->
-        <div
-          class="guarantee-card bg-white p-8 rounded-lg shadow-lg flex flex-col items-center space-y-2 transform scale-100 hover:scale-105 transition-all duration-300"
-        >
-          <i class="fas fa-laptop-code text-blue-600 text-5xl"></i>
+        <div data-aos="fade-up" data-aos-delay="100"
+          class="guarantee-card bg-white/80 backdrop-blur-lg p-8 rounded-2xl shadow-xl flex flex-col items-center space-y-3 transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(59,130,246,0.4)]">
+          <i class="fas fa-laptop-code text-blue-600 text-6xl animate-bounce-slow"></i>
           <h3 class="text-2xl font-bold text-gray-700">
             Simple & Modern Design
           </h3>
+          <p class="text-gray-500 text-base">
+            Clean, responsive, and professional layouts that impress your
+            visitors.
+          </p>
         </div>
 
         <!-- Card 2 -->
-        <div
-          class="guarantee-card bg-white p-8 rounded-lg shadow-lg flex flex-col items-center space-y-2 transform scale-100 hover:scale-105 transition-all duration-300"
-        >
-          <i class="fas fa-globe text-green-600 text-5xl"></i>
+        <div data-aos="fade-up" data-aos-delay="200"
+          class="guarantee-card bg-white/80 backdrop-blur-lg p-8 rounded-2xl shadow-xl flex flex-col items-center space-y-3 transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(34,197,94,0.4)]">
+          <i class="fas fa-globe text-green-600 text-6xl animate-bounce-slow"></i>
           <h3 class="text-2xl font-bold text-gray-700">
             Optimized Web Solutions
           </h3>
+          <p class="text-gray-500 text-base">
+            Speed, SEO, and performance tuned for peak business growth.
+          </p>
         </div>
 
         <!-- Card 3 -->
-        <div
-          class="guarantee-card bg-white p-8 rounded-lg shadow-lg flex flex-col items-center space-y-2 transform scale-100 hover:scale-105 transition-all duration-300"
-        >
-          <i class="fas fa-bolt text-yellow-600 text-5xl"></i>
+        <div data-aos="fade-up" data-aos-delay="300"
+          class="guarantee-card bg-white/80 backdrop-blur-lg p-8 rounded-2xl shadow-xl flex flex-col items-center space-y-3 transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(250,204,21,0.4)]">
+          <i class="fas fa-bolt text-yellow-500 text-6xl animate-bounce-slow"></i>
           <h3 class="text-2xl font-bold text-gray-700">
             Supercharged Websites
           </h3>
+          <p class="text-gray-500 text-base">
+            Lightning-fast loading and powerful back-end optimization.
+          </p>
         </div>
 
         <!-- Card 4 -->
-        <div
-          class="guarantee-card bg-white p-8 rounded-lg shadow-lg flex flex-col items-center space-y-2 transform scale-100 hover:scale-105 transition-all duration-300"
-        >
-          <i class="fas fa-headset text-red-600 text-5xl"></i>
+        <div data-aos="fade-up" data-aos-delay="400"
+          class="guarantee-card bg-white/80 backdrop-blur-lg p-8 rounded-2xl shadow-xl flex flex-col items-center space-y-3 transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(239,68,68,0.4)]">
+          <i class="fas fa-headset text-red-600 text-6xl animate-bounce-slow"></i>
           <h3 class="text-2xl font-bold text-gray-700">
             24/7 Real-Time Support
           </h3>
+          <p class="text-gray-500 text-base">
+            Always available to assist you with technical or account help.
+          </p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="support-section bg-gray-100 py-20 px-10 text-center">
-      <h2 class="text-5xl font-bold text-gray-800 mb-8">
+  <!-- SUPPORT SECTION -->
+  <section
+    class="support-section bg-gradient-to-br from-blue-50 via-white to-green-50 py-20 px-10 text-center overflow-hidden relative">
+    <!-- subtle glowing circle background -->
+    <div
+      class="absolute top-0 left-0 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-pulse">
+    </div>
+    <div
+      class="absolute bottom-0 right-0 w-72 h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-pulse">
+    </div>
+
+    <div class="relative z-10">
+      <h2 data-aos="fade-up" class="text-5xl font-extrabold text-gray-800 mb-8 leading-tight">
         Our Team is Here to Help You 24/7
       </h2>
 
-      <div
-        class="support-content flex flex-col md:flex-row items-center justify-center gap-10"
-      >
-        <ul class="text-lg text-gray-700 space-y-4 md:w-1/2">
+      <div class="support-content flex flex-col md:flex-row items-center justify-center gap-10 mt-10">
+        <ul data-aos="fade-right" class="text-lg text-gray-700 space-y-4 md:w-1/2 text-left">
           <li class="flex items-center gap-3">
             <i class="fas fa-check-circle text-green-500 text-xl"></i>
             Receive help from our agents anytime via WhatsApp
           </li>
           <li class="flex items-center gap-3">
             <i class="fas fa-check-circle text-green-500 text-xl"></i>
-            Follow step-by-step video walkthroughs and guides.
+            Follow step-by-step video walkthroughs and guides
           </li>
           <li class="flex items-center gap-3">
             <i class="fas fa-check-circle text-green-500 text-xl"></i>
-            Access a vast knowledgebase of in-depth tutorials
+            Access a vast knowledge base of in-depth tutorials
           </li>
         </ul>
 
-        <div class="support-image md:w-1/2">
-          <img
-            src="Images/services_support.png"
-            alt="Support Image"
-            class="w-full rounded-lg shadow-lg"
-          />
+        <div data-aos="fade-left" class="support-image md:w-1/2 relative flex justify-center">
+          <img src="Images/services_support.png" alt="Support Team"
+            class="w-4/5 rounded-2xl shadow-2xl transform hover:scale-105 transition duration-500 animate-float" />
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="last text-center py-20 bg-blue-600 text-white">
-      <h2 class="text-5xl font-bold mb-4">Need a Website?</h2>
-      <p class="text-lg mb-6">
-        Start your journey of building a strong digital identity with a modern
-        website.
+  <!-- LAST CTA SECTION -->
+  <section
+    class="last relative text-center py-24 bg-gradient-to-r from-blue-700 to-blue-500 text-white overflow-hidden">
+    <!-- light glow overlay -->
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.15)_0%,_transparent_70%)]">
+    </div>
+
+    <div class="relative z-10 max-w-3xl mx-auto px-6">
+      <h2 data-aos="fade-up" class="text-5xl font-extrabold mb-4 tracking-tight drop-shadow-md">
+        Need a Website?
+      </h2>
+      <p data-aos="fade-up" data-aos-delay="100" class="text-lg mb-8 text-blue-100">
+        Start your journey of building a strong digital identity with a
+        modern, optimized website today.
       </p>
-      <a
-        href="https://wa.me/254715465265"
-        target="_blank"
-        class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300"
-      >
-        WhatsApp Us
+
+      <a data-aos="zoom-in" href="https://wa.me/254715465265" target="_blank"
+        class="mt-6 inline-block bg-green-500 text-white px-6 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-green-600 hover:shadow-[0_0_20px_rgba(34,197,94,0.5)] transition-all duration-300 animate-pulse-slow">
+        💬 WhatsApp Us
       </a>
-    </section>
+    </div>
+  </section>
 
-    <footer class="bg-gray-900 text-gray-400 py-16">
-      <div
-        class="footer-container flex flex-col md:flex-row justify-between px-10 md:px-20"
-      >
-        <div class="logo md:w-1/3">
-          <img src="Images/mine-logo.jpeg" alt="Mine Logo" class="w-20 mb-4" />
-          <p class="text-lg">
-            Mine is a Kenyan web design company specializing in web design,
-            graphic design, digital marketing, and web hosting.
-          </p>
-          <ul class="social-icons flex space-x-4 mt-4">
-            <li>
-              <a href="#" class="text-white text-xl hover:text-blue-400"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-            </li>
-            <li>
-              <a href="#" class="text-white text-xl hover:text-blue-400"
-                ><i class="fab fa-twitter"></i
-              ></a>
-            </li>
-            <li>
-              <a href="#" class="text-white text-xl hover:text-pink-400"
-                ><i class="fab fa-instagram"></i
-              ></a>
-            </li>
-            <li>
-              <a href="#" class="text-white text-xl hover:text-blue-400"
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
-            </li>
-            <li>
-              <a href="#" class="text-white text-xl hover:text-red-400"
-                ><i class="fab fa-google-plus-g"></i
-              ></a>
-            </li>
-          </ul>
+  <footer
+    class="relative bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-gray-300 py-16 sm:py-20 lg:py-24">
+    <div
+      class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between px-4 sm:px-10 md:px-16 lg:px-20 gap-8 md:gap-16 lg:gap-24">
+      <!-- Logo & About -->
+      <div class="md:w-1/3 text-center md:text-left">
+        <div class="relative flex justify-center md:justify-start mb-6">
+          <div class="absolute -inset-1 bg-blue-500/20 blur-lg rounded-lg"></div>
+          <img src="Images/logo.jpg" alt="Mine Logo"
+            class="relative w-20 md:w-20 rounded-lg shadow-xl ring-2 ring-blue-500/50" />
         </div>
-
-        <div class="footer-links md:w-1/4">
-          <h3 class="text-xl font-semibold text-white mb-3">Navigation</h3>
-          <ul class="space-y-2">
-            <li><a href="#" class="hover:text-white">Home</a></li>
-            <li><a href="#" class="hover:text-white">About</a></li>
-            <li><a href="#" class="hover:text-white">Our Blog</a></li>
-            <li><a href="#" class="hover:text-white">Contact</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-links md:w-1/4">
-          <h3 class="text-xl font-semibold text-white mb-3">Useful Links</h3>
-          <ul class="space-y-2">
-            <li><a href="#" class="hover:text-white">Logo Design</a></li>
-            <li><a href="#" class="hover:text-white">Web Design</a></li>
-            <li><a href="#" class="hover:text-white">Digital Marketing</a></li>
-            <li><a href="#" class="hover:text-white">Full Branding</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-links md:w-1/4">
-          <h3 class="text-xl font-semibold text-white mb-3">Contact Us</h3>
-          <ul class="space-y-2">
-            <li class="text-lg">0715465265 or 0746767896</li>
-            <li>
-              <a href="mailto:theeron13@gmail.com" class="hover:text-white"
-                >theeron13@gmail.com</a
-              >
-            </li>
-          </ul>
-        </div>
+        <p class="leading-relaxed text-gray-300 mt-2 text-base text-sm sm:text-lg">
+          <span class="text-white font-semibold">WebNest Ke</span> is a Kenyan
+          web design company specializing in
+          <span class="text-blue-400">web design</span>,
+          <span class="text-green-400">graphic design</span>,
+          <span class="text-yellow-400">digital marketing</span>, and
+          <span class="text-pink-400">web hosting</span>.
+        </p>
       </div>
-    </footer>
-    <script>
-      gsap.from(".hero h1", { opacity: 0, y: -50, duration: 1, delay: 0.3 });
-      gsap.from(".hero p", { opacity: 0, y: -30, duration: 1, delay: 0.6 });
-      gsap.from(".hero img", {
-        opacity: 0,
-        scale: 0.8,
-        duration: 1,
-        delay: 0.9,
-      });
-      gsap.from(".plan-card", { opacity: 0, y: 100, duration: 1 });
 
-      // Navbar sticky effect
-      window.addEventListener("scroll", function () {
-        let nav = document.querySelector("nav");
-        nav.classList.toggle("shadow-md", window.scrollY > 50);
-      });
-      const menuButton = document.getElementById('menu-button');
-      const mobileMenu = document.getElementById('mobile-menu');
+      <!-- Navigation -->
+      <div class="md:w-1/4 text-center md:text-left">
+        <h3 class="text-xl font-semibold text-white mb-5 border-b-2 border-blue-500 pb-1 inline-block">
+          Navigation
+        </h3>
+        <ul class="space-y-3">
+          <li>
+            <a href="index.html" class="hover:text-blue-400 transition-all">Home</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-blue-400 transition-all">About</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-blue-400 transition-all">Our Blog</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-blue-400 transition-all">Contact</a>
+          </li>
+        </ul>
+      </div>
 
-      menuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-    </script>
-  </body>
+      <!-- Useful Links -->
+      <div class="md:w-1/4 text-center md:text-left">
+        <h3 class="text-xl font-semibold text-white mb-5 border-b-2 border-green-500 pb-1 inline-block">
+          Useful Links
+        </h3>
+        <ul class="space-y-3">
+          <li>
+            <a href="brand.html" class="hover:text-green-400 transition-all">Logo Design</a>
+          </li>
+          <li>
+            <a href="web.html" class="hover:text-green-400 transition-all">Web Design</a>
+          </li>
+          <li>
+            <a href="marketing.html" class="hover:text-green-400 transition-all">Digital Marketing</a>
+          </li>
+          <li>
+            <a href="brand.html" class="hover:text-green-400 transition-all">Full Branding</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="md:w-1/4 text-center md:text-left">
+        <h3 class="text-xl font-semibold text-white mb-5 border-b-2 border-pink-500 pb-1 inline-block">
+          Contact Us
+        </h3>
+        <ul class="space-y-3 text-gray-300">
+          <li class="text-lg flex justify-center md:justify-start items-center gap-3">
+            <i class="fas fa-phone-alt text-blue-400"></i> 0715465265 /
+            0746767896
+          </li>
+          <li class="flex justify-center md:justify-start">
+            <a href="mailto:theeron13@gmail.com" class="flex items-center gap-3 hover:text-blue-400 transition-all">
+              <i class="fas fa-envelope text-blue-400"></i>
+              theeron13@gmail.com
+            </a>
+          </li>
+        </ul>
+
+        <!-- Social Icons -->
+        <ul class="flex justify-center md:justify-start space-x-6 mt-8">
+          <li>
+            <a href="#"
+              class="text-2xl text-gray-300 hover:text-blue-400 hover:drop-shadow-[0_0_10px_#3b82f6] transition-all duration-300"><i
+                class="fab fa-facebook-f"></i></a>
+          </li>
+          <li>
+            <a href="#"
+              class="text-2xl text-gray-300 hover:text-sky-400 hover:drop-shadow-[0_0_10px_#38bdf8] transition-all duration-300"><i
+                class="fab fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"
+              class="text-2xl text-gray-300 hover:text-pink-400 hover:drop-shadow-[0_0_10px_#ec4899] transition-all duration-300"><i
+                class="fab fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"
+              class="text-2xl text-gray-300 hover:text-blue-500 hover:drop-shadow-[0_0_10px_#3b82f6] transition-all duration-300"><i
+                class="fab fa-linkedin-in"></i></a>
+          </li>
+          <li>
+            <a href="#"
+              class="text-2xl text-gray-300 hover:text-red-500 hover:drop-shadow-[0_0_10px_#ef4444] transition-all duration-300"><i
+                class="fab fa-google-plus-g"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/a2d9d6a4b6.js" crossorigin="anonymous">
+    gsap.from(".hero h1", { opacity: 0, y: -50, duration: 1, delay: 0.3 });
+    gsap.from(".hero p", { opacity: 0, y: -30, duration: 1, delay: 0.6 });
+    gsap.from(".hero img", {
+      opacity: 0,
+      scale: 0.8,
+      duration: 1,
+      delay: 0.9,
+    });
+    gsap.from(".plan-card", { opacity: 0, y: 100, duration: 1 });
+
+    // Navbar sticky effect
+    window.addEventListener("scroll", function () {
+      let nav = document.querySelector("nav");
+      nav.classList.toggle("shadow-md", window.scrollY > 50);
+    });
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+
 </html>
